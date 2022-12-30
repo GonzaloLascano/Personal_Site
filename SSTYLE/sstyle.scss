@@ -1,0 +1,46 @@
+/* -------- Importing resources --------*/
+
+/* FONTS-------------- */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+/* EMOJIS */
+
+/* -------- Variables --------*/
+// FONTS
+$accent-font: 'Press Start 2P', cursive;
+$text-font: 'Space Mono', monospace;
+$title-size: 48px;
+$subtitle-size: 40px;
+$List-item-size: 24px;
+
+/* _____STYLE_____ */
+
+h1 {
+    font-family: $accent-font;
+    font-size: $title-size;
+}
+
+h2 {
+    color: gray;
+    font-family: $accent-font;
+    font-size: $subtitle-size;
+}
+
+h3 {
+    color: grey;
+    font-family: $text-font;
+    font-size: $subtitle-size;
+}
+
+h4 {
+    font-family: $text-font;
+    font-size: $List-item-size;
+    .intitute {
+        color: gray;
+    }
+    .date {
+        color: gray;
+        font-style: italic;
+    }
+}

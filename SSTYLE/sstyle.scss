@@ -6,41 +6,554 @@
 
 /* EMOJIS */
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 1300,
+  'GRAD' -25,
+  'opsz' 48;
+  font-size: 3vw;
+}
+
 /* -------- Variables --------*/
 // FONTS
 $accent-font: 'Press Start 2P', cursive;
 $text-font: 'Space Mono', monospace;
-$title-size: 48px;
-$subtitle-size: 40px;
-$List-item-size: 24px;
+$title-size: 3rem;
+$subtitle-size: 2.5rem;
+$regular-size:  1.5rem;
+$skills-font-size: 1.5vw;
+$small-size: 1.2rem;
+$menu-size: 2rem;
+
+//ICONS
+
+//section----------
+$iconMarginR: 0 1.5vw 1.2vh 0;
+//tech-------------
+$tlogo-size: 7vw;
+//contact----------
+$contactlogo-size: 30px;
+
+//Pallete
+$detailColor: rgb(255, 223, 193);
+$softer: grey;
+
+
+/* -------- Mixins --------*/
+//BUTTONS 
+@mixin button {
+    border: .7rem solid black;
+    border-radius: 2.5vw;
+    box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+}
+//SKILLS
+@mixin skill-boxes {
+    margin-left: 2vw;
+    position: relative;
+    display: flex;
+    border-radius: 3vw;
+    background-color: rgb(245, 245, 245);
+}
+@mixin skillType-icon($bottom: -4.5%, $left:-2.4%) {
+    font-size: 5vh;
+    position: absolute;
+    bottom: $bottom;
+    left: $left
+}
+//SUBSECTION TITLES
+@mixin subsection-title {
+    margin: 1vh 0;
+    display: flex;
+    align-items: center;
+}
 
 /* _____STYLE_____ */
 
+// __Font Style__
+
 h1 {
+    margin: 0;
     font-family: $accent-font;
     font-size: $title-size;
 }
 
 h2 {
-    color: gray;
+    margin: 0;
+    color: $softer;
     font-family: $accent-font;
     font-size: $subtitle-size;
 }
 
 h3 {
-    color: grey;
+    color: $softer;
     font-family: $text-font;
     font-size: $subtitle-size;
 }
 
 h4 {
     font-family: $text-font;
-    font-size: $List-item-size;
-    .intitute {
-        color: gray;
+    font-size: $regular-size;
+    margin: .5vw 0;
+}
+
+.menu-screen, .menu-screen div p {
+    font-family: $accent-font;
+    font-size: $menu-size
+}
+
+p {
+    font-family: $text-font;
+    font-size: $regular-size;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(143, 104, 68);
+    font-size: $small-size;
+}
+
+// Tech description fonts
+
+.tech_name {
+    display: none;
+    font-family: $accent-font;
+    font-size: $small-size;
+}
+
+//lists: fonts & style
+
+ul{
+    list-style: square;
+}
+
+.softskill, .plusskill, .recent_ed, .recent_exp div{
+    font-family: $text-font;
+    font-size: $skills-font-size;
+    span, p{
+        margin: 0 0.3vw;
+        color: $softer;
+    }
+    ul {
+        font-size: $small-size;
+        color: $softer;
+        li {
+            margin: 0.3vw;
+        }
+    }
+}
+
+.contact_list li{
+    font-family: $text-font;
+    font-size: $regular-size;
+}
+
+//Icons Style
+.section_icon {
+    margin: $iconMarginR;
+    position: relative;
+    bottom: 10px;
+    font-size: $title-size;
+}
+
+.subsection-icon{
+    margin: $iconMarginR;
+    font-size: $subtitle-size;
+}
+
+.hardskill {
+    margin: 2.5% 4.5%;
+    width: 7vw;
+    min-width: 70px;
+    max-width: 90px;
+}
+.in_icon {
+    width: $contactlogo-size;
+}
+
+//______SECTIONS________
+
+body {
+    padding: 0 1vw;
+    overflow-x: hidden;
+}
+
+section {
+    box-sizing: border-box;
+    padding: 5vh 0;
+    margin-bottom: 5vh;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+// Home ----------------
+
+.home{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-screen {
+    position: relative;
+    top: 50%;
+    transform: translateY(-100%);
+    align-self: center;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include button();
+    .menu {
+        width: 410px;
+        margin: 0;
+        padding: 25px 30px;
+        list-style: inside square;
+        box-sizing: border-box;
+        li {
+            margin: 30px 0px;
+        }
+        li::before {
+            position: absolute;
+            left: 30px;
+            content: '';
+            display: none;
+            height: 50px;
+            width: 50px;
+            background-image: url('../images/24686-5-tinycursor.png');
+            background-size: contain;
+        }
+        li:hover {
+            list-style-type: none;
+            padding-left: 60px;    
+        }
+        li:hover::before{
+            display: inline-block;
+        }
+    }
+    div {
+        width: 100%;
+        text-align: center;
+        border-top: 7px solid black;
+        p {
+            margin: 10px 0px;
+            font-size: 2.2rem;
+            transform:rotate(90deg);
+        }
+    }
+    
+     
+}
+
+.my-name {
+    margin: 10px 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+    h1 {
+        margin: 5px 0px;
+    }
+    h3 {
+        margin: 3px 0;
+    }
+}
+
+.menu-finder {
+    padding: 0;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 150px;
+    height: 300px;
+}
+.menu-finder:hover .nav_burguer{
+    transform: translateX(0vw);
+}
+
+.nav_burguer {
+    padding: 0;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 90px;
+    transform: translateX(30vw);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include button();
+    .burger_svg {
+        display: none;
+    }
+    ul {
+        padding: 1.5vh 0;
+        margin: 0;
+        width: 100%;
+        list-style: none;
+        font-family: $accent-font;
+        font-size: 2.5vh;
+        text-align: center;
+        li {
+            margin: 1vh;
+        }
+    }
+    .site_settings {
+        border-bottom: 7px solid black;
+        .flag_icon {
+            font-size: 69%;
+        }
+        .light-theme {
+            display: none;
+        }
+    }
+
+}
+
+
+// About Me ----------------
+
+.about_me {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: max-content  1fr;
+    grid-template-rows: max-content auto auto;
+    .section_icon {
+        grid-column: 1 / 2;
+        grid-row: 1 / 4;
+    }
+    h1 {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .description-box {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    .skills-box {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(150px, 1fr)) repeat(2, minmax(60px, 1fr));
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+        'title title title plus plus'
+        'hard hard hard plus plus'
+        'hard hard hard soft soft'
+        'hard hard hard soft soft';
+        .skill-title{
+            grid-area: title;
+            @include subsection-title();
+            flex-wrap: wrap;
+        }
+        .hardskills-container {
+            grid-area: hard;
+            @include skill-boxes();
+            margin: 0;
+            .diamond-icon {
+                @include skillType-icon;
+            }
+            .hardskills-list {
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                align-self: center;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                justify-items: center;
+                align-content: space-evenly;
+                list-style: none;
+            }
+        }
+        .softskills-container{
+            grid-area: soft;
+            justify-self: center;
+            @include skill-boxes();
+            align-items: center;
+            .softskills-list {
+                padding: 0 2vw 0 3.5vw;
+                height: 80%;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+            .seed-icon {
+                @include skillType-icon(80%, -8.5%)
+            }
+        }
+        .plusskills-container{
+            grid-area: plus;
+            align-self: center;
+            justify-self: center;
+            @include skill-boxes();
+            height: 60%;
+            .plusskills-list {
+                height: 80%;
+                padding: 0 2vw 0 3.5vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                list-style: none;
+                word-break: break-all;
+            }
+            .check-icon{
+                @include skillType-icon(70%, 90%)
+            }
+        }
+    }
+}
+
+// Chronology ----------------
+
+.chronology{
+    box-sizing: border-box;
+    padding: 1.5% 3%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        font-weight: lighter;
+    }
+    p {
+        margin: 1vh;
     }
     .date {
+        display: inline-block;
+        margin-left: 0.5vw;
         color: gray;
-        font-style: italic;
+        font-weight: 400
+    }
+    .ed, .exp {
+        min-width: 520px;
+        width: fit-content;
+        max-width: 43vw;
+        margin-bottom: 3vh
+    }
+    .exp-title, .ed-title {
+        @include subsection-title();
+        justify-content: center;
+    }
+    .recent_ed, .recent_exp {
+        margin: 1.5vw;
+        padding: 0 1vw 1vw 3vw;
+        border: 7px solid $detailColor;
+        border-radius: 2.5vw;
+        
+    }
+    .old_ed, .old_exp {
+        @include skill-boxes();
+        margin: 0 2vw;
+        padding: 1vh 3vw;
+        flex-direction: column;
+        li{
+            margin: 1vh 0;
+        }
+        .exp_details{
+            display: none;
+            position: absolute;
+            bottom: -50%;
+            left: 5%;
+            background-color: white;
+            border-radius: 18px;
+            padding: 0 1vw;
+            box-shadow: 5px 5px 0px 5px grey;
+        }
+        .exp_card:hover{
+            position: relative;
+            .exp_details{
+                display: block;
+            }
+        }
+    }
+
+}
+
+//contact
+
+.contact {
+    display: grid;
+    grid-template-areas: 
+    'icon title title'
+    'icon list list'
+    'icon portfolio portfolio'
+    'icon button button';
+    grid-template-columns: max-content auto auto;
+    grid-template-rows: max-content max-content max-content max-content;
+    .section-icon {
+        grid-template-columns: icon;
+    }
+    h1 {
+        grid-area: title;
+    }
+    .contact_list{
+        box-sizing: border-box;
+        padding: 0 2vw;
+        width: 100%;
+        grid-area: list;
+        @include skill-boxes();
+        margin: 2vh 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        list-style: none;
+        a{
+            font-size: $regular-size;
+        }
+        li {
+            display: inline;
+            width: max-content;
+            margin: 3vh;
+            div {
+                display: inline;
+            } 
+        }
+    }
+    .portfolio{
+        width: 100%;
+        margin: 0 0 2vh 0;
+        justify-self: self-start;
+        grid-area: portfolio;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        .subsection-title {
+            @include subsection-title();
+        }
+    }
+    .button{
+        margin: 2vh 0.5vw;
+        padding: 0 2vw;
+        width: 30%;
+        min-width: max-content;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        @include button();
+        font-family: $text-font;
+        font-size: $regular-size;
+        font-weight: bold;
+        
+    }
+    #download_cv {
+        width: max-content;
+        padding: 0 5vw;
+        margin: 4vh;
+        grid-area: button;
+        justify-self: center;
+        a {
+            color: black;
+        }
     }
 }

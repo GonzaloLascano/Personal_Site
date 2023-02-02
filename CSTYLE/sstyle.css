@@ -3,35 +3,511 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 /* EMOJIS */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 1300, "GRAD" -25, "opsz" 48;
+  font-size: 3vw;
+}
+
 /* -------- Variables --------*/
+/* -------- Mixins --------*/
 /* _____STYLE_____ */
 h1 {
+  margin: 0;
   font-family: "Press Start 2P", cursive;
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 h2 {
-  color: gray;
+  margin: 0;
+  color: grey;
   font-family: "Press Start 2P", cursive;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 h3 {
   color: grey;
   font-family: "Space Mono", monospace;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 h4 {
   font-family: "Space Mono", monospace;
-  font-size: 24px;
+  font-size: 1.5rem;
+  margin: 0.5vw 0;
 }
-h4 .intitute {
-  color: gray;
+
+.menu-screen, .menu-screen div p {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
 }
-h4 .date {
+
+p {
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(143, 104, 68);
+  font-size: 1.2rem;
+}
+
+.tech_name {
+  display: none;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: square;
+}
+
+.softskill, .plusskill, .recent_ed, .recent_exp div {
+  font-family: "Space Mono", monospace;
+  font-size: 1.5vw;
+}
+.softskill span, .softskill p, .plusskill span, .plusskill p, .recent_ed span, .recent_ed p, .recent_exp div span, .recent_exp div p {
+  margin: 0 0.3vw;
+  color: grey;
+}
+.softskill ul, .plusskill ul, .recent_ed ul, .recent_exp div ul {
+  font-size: 1.2rem;
+  color: grey;
+}
+.softskill ul li, .plusskill ul li, .recent_ed ul li, .recent_exp div ul li {
+  margin: 0.3vw;
+}
+
+.contact_list li {
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+}
+
+.section_icon {
+  margin: 0 1.5vw 1.2vh 0;
+  position: relative;
+  bottom: 10px;
+  font-size: 3rem;
+}
+
+.subsection-icon {
+  margin: 0 1.5vw 1.2vh 0;
+  font-size: 2.5rem;
+}
+
+.hardskill {
+  margin: 2.5% 4.5%;
+  width: 7vw;
+  min-width: 70px;
+  max-width: 90px;
+}
+
+.in_icon {
+  width: 30px;
+}
+
+body {
+  padding: 0 1vw;
+  overflow-x: hidden;
+}
+
+section {
+  box-sizing: border-box;
+  padding: 5vh 0;
+  margin-bottom: 5vh;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-screen {
+  position: relative;
+  top: 50%;
+  transform: translateY(-100%);
+  align-self: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.7rem solid black;
+  border-radius: 2.5vw;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+}
+.menu-screen .menu {
+  width: 410px;
+  margin: 0;
+  padding: 25px 30px;
+  list-style: inside square;
+  box-sizing: border-box;
+}
+.menu-screen .menu li {
+  margin: 30px 0px;
+}
+.menu-screen .menu li::before {
+  position: absolute;
+  left: 30px;
+  content: "";
+  display: none;
+  height: 50px;
+  width: 50px;
+  background-image: url("../images/24686-5-tinycursor.png");
+  background-size: contain;
+}
+.menu-screen .menu li:hover {
+  list-style-type: none;
+  padding-left: 60px;
+}
+.menu-screen .menu li:hover::before {
+  display: inline-block;
+}
+.menu-screen div {
+  width: 100%;
+  text-align: center;
+  border-top: 7px solid black;
+}
+.menu-screen div p {
+  margin: 10px 0px;
+  font-size: 2.2rem;
+  transform: rotate(90deg);
+}
+
+.my-name {
+  margin: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: end;
+}
+.my-name h1 {
+  margin: 5px 0px;
+}
+.my-name h3 {
+  margin: 3px 0;
+}
+
+.menu-finder {
+  padding: 0;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 150px;
+  height: 300px;
+}
+
+.menu-finder:hover .nav_burguer {
+  transform: translateX(0vw);
+}
+
+.nav_burguer {
+  padding: 0;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 90px;
+  transform: translateX(30vw);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.7rem solid black;
+  border-radius: 2.5vw;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+}
+.nav_burguer .burger_svg {
+  display: none;
+}
+.nav_burguer ul {
+  padding: 1.5vh 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5vh;
+  text-align: center;
+}
+.nav_burguer ul li {
+  margin: 1vh;
+}
+.nav_burguer .site_settings {
+  border-bottom: 7px solid black;
+}
+.nav_burguer .site_settings .flag_icon {
+  font-size: 69%;
+}
+.nav_burguer .site_settings .light-theme {
+  display: none;
+}
+
+.about_me {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: max-content auto auto;
+}
+.about_me .section_icon {
+  grid-column: 1/2;
+  grid-row: 1/4;
+}
+.about_me h1 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.about_me .description-box {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.about_me .skills-box {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr)) repeat(2, minmax(60px, 1fr));
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "title title title plus plus" "hard hard hard plus plus" "hard hard hard soft soft" "hard hard hard soft soft";
+}
+.about_me .skills-box .skill-title {
+  grid-area: title;
+  margin: 1vh 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.about_me .skills-box .hardskills-container {
+  grid-area: hard;
+  margin-left: 2vw;
+  position: relative;
+  display: flex;
+  border-radius: 3vw;
+  background-color: rgb(245, 245, 245);
+  margin: 0;
+}
+.about_me .skills-box .hardskills-container .diamond-icon {
+  font-size: 5vh;
+  position: absolute;
+  bottom: -4.5%;
+  left: -2.4%;
+}
+.about_me .skills-box .hardskills-container .hardskills-list {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-items: center;
+  align-content: space-evenly;
+  list-style: none;
+}
+.about_me .skills-box .softskills-container {
+  grid-area: soft;
+  justify-self: center;
+  margin-left: 2vw;
+  position: relative;
+  display: flex;
+  border-radius: 3vw;
+  background-color: rgb(245, 245, 245);
+  align-items: center;
+}
+.about_me .skills-box .softskills-container .softskills-list {
+  padding: 0 2vw 0 3.5vw;
+  height: 80%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.about_me .skills-box .softskills-container .seed-icon {
+  font-size: 5vh;
+  position: absolute;
+  bottom: 80%;
+  left: -8.5%;
+}
+.about_me .skills-box .plusskills-container {
+  grid-area: plus;
+  align-self: center;
+  justify-self: center;
+  margin-left: 2vw;
+  position: relative;
+  display: flex;
+  border-radius: 3vw;
+  background-color: rgb(245, 245, 245);
+  height: 60%;
+}
+.about_me .skills-box .plusskills-container .plusskills-list {
+  height: 80%;
+  padding: 0 2vw 0 3.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  list-style: none;
+  word-break: break-all;
+}
+.about_me .skills-box .plusskills-container .check-icon {
+  font-size: 5vh;
+  position: absolute;
+  bottom: 70%;
+  left: 90%;
+}
+
+.chronology {
+  box-sizing: border-box;
+  padding: 1.5% 3%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.chronology ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  font-weight: lighter;
+}
+.chronology p {
+  margin: 1vh;
+}
+.chronology .date {
+  display: inline-block;
+  margin-left: 0.5vw;
   color: gray;
-  font-style: italic;
+  font-weight: 400;
+}
+.chronology .ed, .chronology .exp {
+  min-width: 520px;
+  width: fit-content;
+  max-width: 43vw;
+  margin-bottom: 3vh;
+}
+.chronology .exp-title, .chronology .ed-title {
+  margin: 1vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chronology .recent_ed, .chronology .recent_exp {
+  margin: 1.5vw;
+  padding: 0 1vw 1vw 3vw;
+  border: 7px solid rgb(255, 223, 193);
+  border-radius: 2.5vw;
+}
+.chronology .old_ed, .chronology .old_exp {
+  margin-left: 2vw;
+  position: relative;
+  display: flex;
+  border-radius: 3vw;
+  background-color: rgb(245, 245, 245);
+  margin: 0 2vw;
+  padding: 1vh 3vw;
+  flex-direction: column;
+}
+.chronology .old_ed li, .chronology .old_exp li {
+  margin: 1vh 0;
+}
+.chronology .old_ed .exp_details, .chronology .old_exp .exp_details {
+  display: none;
+  position: absolute;
+  bottom: -50%;
+  left: 5%;
+  background-color: white;
+  border-radius: 18px;
+  padding: 0 1vw;
+  box-shadow: 5px 5px 0px 5px grey;
+}
+.chronology .old_ed .exp_card:hover, .chronology .old_exp .exp_card:hover {
+  position: relative;
+}
+.chronology .old_ed .exp_card:hover .exp_details, .chronology .old_exp .exp_card:hover .exp_details {
+  display: block;
+}
+
+.contact {
+  display: grid;
+  grid-template-areas: "icon title title" "icon list list" "icon portfolio portfolio" "icon button button";
+  grid-template-columns: max-content auto auto;
+  grid-template-rows: max-content max-content max-content max-content;
+}
+.contact .section-icon {
+  grid-template-columns: icon;
+}
+.contact h1 {
+  grid-area: title;
+}
+.contact .contact_list {
+  box-sizing: border-box;
+  padding: 0 2vw;
+  width: 100%;
+  grid-area: list;
+  margin-left: 2vw;
+  position: relative;
+  display: flex;
+  border-radius: 3vw;
+  background-color: rgb(245, 245, 245);
+  margin: 2vh 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style: none;
+}
+.contact .contact_list a {
+  font-size: 1.5rem;
+}
+.contact .contact_list li {
+  display: inline;
+  width: max-content;
+  margin: 3vh;
+}
+.contact .contact_list li div {
+  display: inline;
+}
+.contact .portfolio {
+  width: 100%;
+  margin: 0 0 2vh 0;
+  justify-self: self-start;
+  grid-area: portfolio;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.contact .portfolio .subsection-title {
+  margin: 1vh 0;
+  display: flex;
+  align-items: center;
+}
+.contact .button {
+  margin: 2vh 0.5vw;
+  padding: 0 2vw;
+  width: 30%;
+  min-width: max-content;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 0.7rem solid black;
+  border-radius: 2.5vw;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.contact #download_cv {
+  width: max-content;
+  padding: 0 5vw;
+  margin: 4vh;
+  grid-area: button;
+  justify-self: center;
+}
+.contact #download_cv a {
+  color: black;
 }
 
 /*# sourceMappingURL=sstyle.css.map */

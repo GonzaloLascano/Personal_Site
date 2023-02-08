@@ -19,19 +19,20 @@
 // FONTS
 $accent-font: 'Press Start 2P', cursive;
 $text-font: 'Space Mono', monospace;
-$title-size: 3rem;
-$subtitle-size: 2.5rem;
-$regular-size:  1.5rem;
-$skills-font-size: max(1.6vw, 1.4rem);
-$small-size: 1.2rem;
+$title-size: 2.5rem;
+$subtitle-size: 1.8rem;
+$regular-size:  1.2rem;
+$skills-font-size: min(2.6vw, 1.2rem);
+$small-size: 1rem;
 $menu-size: 2rem;
 
 //ICONS
 
 //section----------
-$iconMarginR: 0 1.5vw 1.2vh 0;
+$subSectionMargin: 5vh 0;
+$iconMarginR: 0 1.5vw 0 0;
 //tech-------------
-$tlogo-size: 7vw;
+$tlogo-size: min(7vw, 80px);
 //contact----------
 $contactlogo-size: 30px;
 
@@ -163,7 +164,7 @@ ul{
 
 .hardskill {
     margin: 2.5% 4.5%;
-    width: 7vw;
+    width: $tlogo-size;
     min-width: 70px;
     max-width: 90px;
 }
@@ -174,10 +175,9 @@ ul{
 //____Buttons____
 
 .button{
-    margin: 2vh 0.5vw;
-    padding: 0 2vw;
-    width: 30%;
-    min-width: max-content;
+    margin: 1rem 3rem;
+    padding: 0 2rem;
+    width: 350px;
     height: 10vh;
     display: flex;
     flex-direction: row;
@@ -335,6 +335,7 @@ section {
 
 .about_me {
     box-sizing: border-box;
+    padding: 5vh 2%;
     height: auto;
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -355,21 +356,26 @@ section {
         grid-column: 2 / 3;
         grid-row: 3 / 4;
         width: 100%;
-        margin:3vh 0;
+        margin: $subSectionMargin;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         flex-wrap: wrap;
         .subsection-title {
             @include subsection-title();
         }
+        .portfolio-links{
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
     .skills-box {
+        margin: $subSectionMargin;
         grid-column: 2 / 3;
         grid-row: 4 / 5;
         display: grid;
         grid-template-columns: repeat(3, minmax(150px, 1fr)) repeat(2, minmax(60px, 1fr));
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: max-content repeat(3, 1fr);
         grid-template-areas:
         'title title title plus plus'
         'hard hard hard plus plus'
@@ -377,8 +383,12 @@ section {
         'hard hard hard soft soft';
         .skill-title{
             grid-area: title;
-            @include subsection-title();
+            margin: 3vh 0;
+            display: flex;
+            align-items: center;
             flex-wrap: wrap;
+            height: fit-content;
+            align-self: end;
         }
         .hardskills-container {
             grid-area: hard;
@@ -388,7 +398,8 @@ section {
                 @include skillType-icon;
             }
             .hardskills-list {
-                padding: 0;
+                box-sizing: border-box;
+                padding: 1vh 0;
                 margin: 0;
                 position: absolute;
                 width: 100%;
@@ -396,6 +407,8 @@ section {
                 align-self: center;
                 display: grid;
                 grid-template-columns: auto auto auto auto;
+                grid-template-rows: repeat(3, 1fr);
+                align-items: center;
                 justify-items: center;
                 align-content: space-evenly;
                 list-style: none;
@@ -443,6 +456,7 @@ section {
 // Chronology ----------------
 
 .chronology{
+    margin: $subSectionMargin;
     box-sizing: border-box;
     padding: 0 3%;
     height: auto;
@@ -514,8 +528,8 @@ section {
 
 .contact {
     height: auto;
-    padding: 3vh 0;
-    background-color: rgb(204, 204, 204);
+    padding: 3vh 2%;
+    background-color: rgb(245, 245, 245);
     display: grid;
     grid-template-areas:
         "icon title button"
@@ -527,7 +541,6 @@ section {
     .section_icon {
         grid-area: icon;
         align-self: flex-start;
-        margin: 0vw 1.5vw 1.2vh 0;
     }
     h1 {
         grid-area: title;
@@ -560,7 +573,7 @@ section {
         align-self: center;
         width: max-content;
         padding: 0 3vw;
-        margin: 6vh 0;
+        margin: 3vh 8vh;
         grid-area: button;
         a {
             color: black;

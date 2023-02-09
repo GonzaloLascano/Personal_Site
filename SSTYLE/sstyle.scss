@@ -618,8 +618,15 @@ section {
     }
     .about_me {
         padding: 5vh 0;
+        h1 {
+            padding: 0 2%;
+        }
+        .description-box {
+            width: 95%;
+            padding-left: 2%;
+        }
         .skills-box {
-            grid-template-columns: max-content max-content;
+            grid-template-columns: auto;
             grid-auto-rows: max-content;
             grid-template-areas:
             'title title'

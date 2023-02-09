@@ -20,7 +20,7 @@
 $accent-font: 'Press Start 2P', cursive;
 $text-font: 'Space Mono', monospace;
 $title-size: 2.5rem;
-$subtitle-size: 1.8rem;
+$subtitle-size: 1.9rem;
 $regular-size:  1.2rem;
 $skills-font-size: min(2.6vw, 1.2rem);
 $small-size: 1rem;
@@ -45,7 +45,7 @@ $softer: grey;
 //BUTTONS 
 @mixin button {
     border: .7rem solid black;
-    border-radius: 2.5vw;
+    border-radius: 2.5rem;
     box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
     font-family: $text-font;
     font-size: $regular-size;
@@ -59,7 +59,8 @@ $softer: grey;
     border-radius: 3vw;
     background-color: rgb(245, 245, 245);
 }
-@mixin skillType-icon($bottom: -4.5%, $left:-2.4%) {
+@mixin skillType-icon($bottom: -1.5%, $left:-1.5%) {
+    opacity: 50%;
     font-size: 5vh;
     position: absolute;
     bottom: $bottom;
@@ -101,9 +102,10 @@ h4 {
     margin: .5vw 0;
 }
 
-.menu-screen ul, .menu-screen div p {
+.menu-screen a, .menu-screen div p {
     font-family: $accent-font;
     font-size: $menu-size;
+    color: black;
 }
 
 p {
@@ -190,6 +192,9 @@ ul{
 
     
 }
+.button:hover {
+    transform: scale(1.1);
+}
 
 //______SECTIONS________
 
@@ -259,7 +264,7 @@ section {
         p {
             margin: 10px 0px;
             font-size: 2.2rem;
-            transform:rotate(90deg);
+            transform:rotate(-90deg);
         }
     }
     
@@ -313,10 +318,12 @@ section {
         width: 100%;
         list-style: none;
         font-family: $accent-font;
-        font-size: 2.5vh;
         text-align: center;
         li {
             margin: 1vh;
+            a {
+                font-size: 2.5vh;
+            }
         }
     }
     .site_settings {
@@ -428,7 +435,7 @@ section {
                 justify-content: space-evenly;
             }
             .seed-icon {
-                @include skillType-icon(80%, -8.5%)
+                @include skillType-icon(87%, -4.5%)
             }
         }
         .plusskills-container{
@@ -447,7 +454,7 @@ section {
                 word-break: break-all;
             }
             .check-icon{
-                @include skillType-icon(70%, 90%)
+                @include skillType-icon(75%, 88%)
             }
         }
     }
@@ -586,9 +593,7 @@ section {
         padding: 0 3vw;
         margin: 3vh 8vh;
         grid-area: button;
-        a {
-            color: black;
-        }
+        color: black;
     }
 }
 

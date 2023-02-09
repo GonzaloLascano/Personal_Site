@@ -36,7 +36,7 @@ h4 {
   margin: 0.5vw 0;
 }
 
-.menu-screen, .menu-screen div p {
+.menu-screen ul, .menu-screen div p {
   font-family: "Press Start 2P", cursive;
   font-size: 2rem;
 }
@@ -155,6 +155,9 @@ section {
   border: 0.7rem solid black;
   border-radius: 2.5vw;
   box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 .menu-screen .menu {
   width: 410px;
@@ -210,7 +213,7 @@ section {
 
 .menu-finder {
   padding: 0;
-  position: absolute;
+  position: fixed;
   top: 3%;
   right: 3%;
   width: 150px;
@@ -235,6 +238,9 @@ section {
   border: 0.7rem solid black;
   border-radius: 2.5vw;
   box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 .nav_burguer .burger_svg {
   display: none;
@@ -292,13 +298,14 @@ section {
   flex-wrap: wrap;
 }
 .about_me .portfolio .subsection-title {
-  margin: 1vh 0;
+  margin: 5vh 0;
   display: flex;
   align-items: center;
 }
 .about_me .portfolio .portfolio-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .about_me .skills-box {
   margin: 5vh 0;
@@ -311,7 +318,7 @@ section {
 }
 .about_me .skills-box .skill-title {
   grid-area: title;
-  margin: 3vh 0;
+  margin: 5vh 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -401,14 +408,17 @@ section {
 }
 
 .chronology {
-  margin: 5vh 0;
+  margin: 0 0 64px 5vh;
+  margin-left: 64px;
+  margin-top: 0;
+  width: 94%;
   box-sizing: border-box;
   padding: 0 3%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 .chronology ul {
   list-style: none;
@@ -426,16 +436,16 @@ section {
   font-weight: 400;
 }
 .chronology .ed, .chronology .exp {
-  min-width: 520px;
+  min-width: 430px;
   width: fit-content;
   max-width: 43vw;
   margin-bottom: 3vh;
 }
 .chronology .exp-title, .chronology .ed-title {
-  margin: 1vh 0;
+  margin: 5vh 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .chronology .recent_ed, .chronology .recent_exp {
   margin: 1.5vw;
@@ -474,6 +484,7 @@ section {
 }
 
 .contact {
+  width: 100%;
   height: auto;
   padding: 3vh 2%;
   background-color: rgb(245, 245, 245);
@@ -503,9 +514,15 @@ section {
   list-style: none;
   min-height: 11vh;
   justify-content: flex-start;
+  align-items: center;
 }
 .contact .contact_list a {
+  margin-left: 12px;
   font-size: 1.2rem;
+}
+.contact .contact_list li:last-child {
+  display: flex;
+  align-items: center;
 }
 .contact .contact_list li {
   display: inline;
@@ -517,6 +534,7 @@ section {
 }
 .contact #download_cv {
   align-self: center;
+  justify-self: center;
   width: max-content;
   padding: 0 3vw;
   margin: 3vh 8vh;
@@ -524,6 +542,48 @@ section {
 }
 .contact #download_cv a {
   color: black;
+}
+
+@media only screen and (max-width: 992px) {
+  .chronology {
+    margin: 0 0px 5vh 54px;
+    justify-content: flex-start;
+  }
+  .chronology .ed, .chronology .exp {
+    width: 90%;
+    max-width: none;
+  }
+  .about_me .skills-box {
+    grid-template-columns: max-content max-content;
+    grid-auto-rows: max-content;
+    grid-template-areas: "title title" "hard hard" "hard hard" "hard hard" "soft soft" "soft soft" "plus plus" "plus plus";
+    row-gap: 25px;
+  }
+  .about_me .skills-box .hardskills-container {
+    justify-self: center;
+    width: 80vw;
+  }
+  .about_me .skills-box .softskills-container {
+    width: 100%;
+  }
+  .about_me .skills-box .softskills-container .softskill {
+    font-size: 1.2rem;
+  }
+  .about_me .skills-box .softskills-container .seed-icon {
+    left: 88.5%;
+  }
+  .about_me .skills-box .plusskills-container {
+    width: 100%;
+    height: max-content;
+  }
+  .about_me .skills-box .plusskills-container .plusskill {
+    font-size: 1.2rem;
+  }
+  .contact {
+    grid-template-columns: max-content auto max-content;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: "icon title" "icon list" "icon button";
+  }
 }
 
 /*# sourceMappingURL=sstyle.css.map */

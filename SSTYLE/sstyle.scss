@@ -47,6 +47,9 @@ $softer: grey;
     border: .7rem solid black;
     border-radius: 2.5vw;
     box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+    font-family: $text-font;
+    font-size: $regular-size;
+    font-weight: bold;
 }
 //SKILLS
 @mixin skill-boxes {
@@ -64,7 +67,7 @@ $softer: grey;
 }
 //SUBSECTION TITLES
 @mixin subsection-title {
-    margin: 1vh 0;
+    margin: $subSectionMargin;
     display: flex;
     align-items: center;
 }
@@ -98,9 +101,9 @@ h4 {
     margin: .5vw 0;
 }
 
-.menu-screen, .menu-screen div p {
+.menu-screen ul, .menu-screen div p {
     font-family: $accent-font;
-    font-size: $menu-size
+    font-size: $menu-size;
 }
 
 p {
@@ -184,9 +187,7 @@ ul{
     align-items: center;
     justify-content: center;
     @include button();
-    font-family: $text-font;
-    font-size: $regular-size;
-    font-weight: bold;
+
     
 }
 
@@ -281,7 +282,7 @@ section {
 
 .menu-finder {
     padding: 0;
-    position: absolute;
+    position: fixed;
     top: 3%;
     right: 3%;
     width: 150px;
@@ -367,6 +368,7 @@ section {
         .portfolio-links{
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
     }
     .skills-box {
@@ -383,9 +385,7 @@ section {
         'hard hard hard soft soft';
         .skill-title{
             grid-area: title;
-            margin: 3vh 0;
-            display: flex;
-            align-items: center;
+            @include subsection-title();
             flex-wrap: wrap;
             height: fit-content;
             align-self: end;
@@ -456,14 +456,17 @@ section {
 // Chronology ----------------
 
 .chronology{
-    margin: $subSectionMargin;
+    margin: 0 0 64px 5vh;
+    margin-left: 64px;
+    margin-top: 0;
+    width: 94%;
     box-sizing: border-box;
     padding: 0 3%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     ul {
         list-style: none;
         display: flex;
@@ -480,14 +483,14 @@ section {
         font-weight: 400
     }
     .ed, .exp {
-        min-width: 520px;
+        min-width: 430px;
         width: fit-content;
         max-width: 43vw;
         margin-bottom: 3vh
     }
     .exp-title, .ed-title {
         @include subsection-title();
-        justify-content: center;
+        justify-content: flex-start;
     }
     .recent_ed, .recent_exp {
         margin: 1.5vw;
@@ -524,9 +527,10 @@ section {
 
 }
 
-//contact
+// Contact ------------
 
 .contact {
+    width: 100%;
     height: auto;
     padding: 3vh 2%;
     background-color: rgb(245, 245, 245);
@@ -557,8 +561,14 @@ section {
         list-style: none;
         min-height: 11vh;
         justify-content: flex-start;
-        a{
+        align-items: center;
+        a {
+            margin-left: 12px;
             font-size: $regular-size;
+        }
+        li:last-child {
+            display: flex;
+            align-items: center;
         }
         li {
             display: inline;
@@ -571,6 +581,7 @@ section {
     }
     #download_cv {
         align-self: center;
+        justify-self: center;
         width: max-content;
         padding: 0 3vw;
         margin: 3vh 8vh;
@@ -578,5 +589,60 @@ section {
         a {
             color: black;
         }
+    }
+}
+
+// ______MEDIA QUERIES________
+@media only screen and (max-width: 992px) {
+    .chronology {
+        margin: 0 0px 5vh 54px;
+        justify-content: flex-start;
+        .ed, .exp {
+            width: 90%;
+            max-width: none;
+        }
+    }
+    .about_me .skills-box {
+        grid-template-columns: max-content max-content;
+        grid-auto-rows: max-content;
+        grid-template-areas:
+        'title title'
+        'hard hard'
+        'hard hard'
+        'hard hard'
+        'soft soft'
+        'soft soft'
+        'plus plus'
+        'plus plus';
+        row-gap: 25px;
+        .hardskills-container {
+            justify-self: center;
+            width: 80vw;
+        }
+        .softskills-container {
+            width: 100%;
+            .softskill {
+                font-size: 1.2rem;
+            }
+            .seed-icon {
+                left: 88.5%;
+            }
+        }
+        .plusskills-container {
+            width: 100%;
+            height: max-content;
+            .plusskill {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .contact {
+        grid-template-columns: max-content auto max-content;
+        grid-template-rows: max-content 1fr;
+        grid-template-areas:
+        "icon title"
+        "icon list"
+        "icon button";
     }
 }

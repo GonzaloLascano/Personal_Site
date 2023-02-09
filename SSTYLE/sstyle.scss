@@ -201,6 +201,7 @@ ul{
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
     overflow-x: hidden;
 }
 
@@ -292,8 +293,12 @@ section {
     right: 3%;
     width: 150px;
     height: 300px;
+    .nav_burguer {
+        display: none;
+    }
 }
 .menu-finder:hover .nav_burguer{
+    display: block;
     transform: translateX(0vw);
 }
 
@@ -599,49 +604,70 @@ section {
 
 // ______MEDIA QUERIES________
 @media only screen and (max-width: 992px) {
+    .section_icon{
+        display: none;
+    }
+    .button {
+        margin: 1rem 1rem;
+    }
+    .menu-screen .menu {
+        width: min(84vw, 410px);
+        a {
+            font-size: 128%;
+        }
+    }
+    .about_me {
+        padding: 5vh 0;
+        .skills-box {
+            grid-template-columns: max-content max-content;
+            grid-auto-rows: max-content;
+            grid-template-areas:
+            'title title'
+            'hard hard'
+            'hard hard'
+            'hard hard'
+            'soft soft'
+            'soft soft'
+            'plus plus'
+            'plus plus';
+            row-gap: 25px;
+            .hardskills-container {
+                justify-self: center;
+                width: 100%;
+            }
+            .softskills-container {
+                width: 100%;
+                .softskill {
+                    font-size: 1.2rem;
+                }
+                .seed-icon{
+                    left: 83.5%;
+                    bottom: 63%;
+                }
+            }
+            .plusskills-container {
+                width: 100%;
+                height: max-content;
+                .check-icon{
+                    left: 83.5%;
+                    bottom: 53%;
+                }
+                .plusskill {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
     .chronology {
-        margin: 0 0px 5vh 54px;
+        margin: 0 0px 5vh 0;
+        padding: 0;
         justify-content: flex-start;
         .ed, .exp {
             width: 90%;
             max-width: none;
+            min-width: 405px;
         }
     }
-    .about_me .skills-box {
-        grid-template-columns: max-content max-content;
-        grid-auto-rows: max-content;
-        grid-template-areas:
-        'title title'
-        'hard hard'
-        'hard hard'
-        'hard hard'
-        'soft soft'
-        'soft soft'
-        'plus plus'
-        'plus plus';
-        row-gap: 25px;
-        .hardskills-container {
-            justify-self: center;
-            width: 80vw;
-        }
-        .softskills-container {
-            width: 100%;
-            .softskill {
-                font-size: 1.2rem;
-            }
-            .seed-icon {
-                left: 88.5%;
-            }
-        }
-        .plusskills-container {
-            width: 100%;
-            height: max-content;
-            .plusskill {
-                font-size: 1.2rem;
-            }
-        }
-    }
-
     .contact {
         grid-template-columns: max-content auto max-content;
         grid-template-rows: max-content 1fr;
@@ -649,5 +675,9 @@ section {
         "icon title"
         "icon list"
         "icon button";
+        #download_cv {
+            margin: 3vh 0;
+        }
+
     }
 }

@@ -193,9 +193,8 @@ section {
 }
 .home .menu-screen {
   background-color: white;
+  margin: auto 0;
   position: relative;
-  top: 50%;
-  transform: translateY(-100%);
   align-self: center;
   width: fit-content;
   display: flex;

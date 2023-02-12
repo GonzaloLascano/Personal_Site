@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./CSTYLE/sstyle.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Gonzalo Puñales Multimedia & Web Dev</title>
 </head>
 <body>
@@ -30,7 +31,7 @@
                 <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
             </p>
         </div>
-        <div class="menu-screen">
+        <div class="menu-screen" data-aos="zoom-out" data-aos-delay="2000">
             <ul class="menu">
                 <li class="translatable esp"><a href="#about_me">Sobre Mi</a></li>
                 <li class="translatable esp"><a href="#contact">Contacto</a></li>
@@ -40,7 +41,8 @@
                 <p>»</p>
             </div>
         </div>
-        <div class="my-name">
+        <div 
+        class="my-name" data-aos="fade-right" data-aos-duration="2000">
             <h1>GONZALO IVAN </h1>
             <h1>PUÑALES LASCANO</h1>
             <h3>Multimedia & web dev's Online C.V.</h3>
@@ -60,7 +62,7 @@
                 <div class="subsection-icon">💪</div>
                 <h2>Habilidades:</h2>
             </div>
-            <div class="plusskills-container">
+            <div class="plusskills-container" data-aos="fade-left">
                 <ul class="plusskills-list">
                     <li class="plusskill">
                         → Idioma: <br> <span>ESP(nativo)/ENG(advanced)</span>
@@ -69,7 +71,7 @@
                 </ul>
                 <div class="check-icon">✔️</div>
             </div>
-            <div class="hardskills-container">
+            <div class="hardskills-container" data-aos="fade-right">
                 <ul class="hardskills-list">
                     <li class="hardskill">
                         <img class="tech_logo"src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
@@ -122,7 +124,7 @@
                 </ul>
                 <div class="diamond-icon">💎</div>
             </div>
-            <div class="softskills-container">
+            <div class="softskills-container" data-aos="fade-left">
                 <ul class="softskills-list">
                     <li class="softskill">→ comunicación</li>
                     <li class="softskill">→ observación</li>
@@ -138,7 +140,7 @@
                 <div class="subsection-icon">💼</div>
                 <h2>Portfolio:</h2>
             </div>
-            <div class="portfolio-links">
+            <div class="portfolio-links" data-aos="zoom-in">
                 <a href="https://github.com/GonzaloLascano" target="_blank">
                     <button class="button">Web Development <span class="subsection-icon">💻</span></button>
                 </a>
@@ -155,7 +157,7 @@
                 <div class="subsection-icon">👨‍🎓</div>
                 <h2>Educación:</h2>
             </div>
-            <div class="recent_ed">
+            <div class="recent_ed"  data-aos="flip-left">
                 <h4>→ Desarrollo Full Stack</h4>
                 <p>@ CoderHouse<span class="date">|04/'21 - 11/'22</span></p>
                 <ul>
@@ -165,7 +167,7 @@
                     <li>→ Backend</li>
                 </ul>
             </div>
-            <ul class="old_exp">
+            <ul class="old_exp"  data-aos="flip-left">
                 <li class="exp_card">
                     <h4>→ Cine de Animación</h4>
                     <div class="exp_details">
@@ -182,7 +184,7 @@
                 </li>
                 <li class="exp_card">
                     <h4>→ Negotiation & Troubleshooting Techniques</h4>
-                    <div class="exp_details">
+                    <div class="exp_details" data-aos="fade-right">
                         <h4>Negotiation & Troubleshooting Techniques</h4>
                         <p>@ I.C.B.C.<span class="date">| '18</span></p>
                     </div>
@@ -194,7 +196,7 @@
                 <div class="subsection-icon">👨‍💻</div>
                 <h2>Experiencia:</h2>
             </div>
-            <ul class="recent_exp">
+            <ul class="recent_exp" data-aos="flip-left" data-aos-delay="300">
                 <div>
                     <h4>→ Overcome The Barrier LLC <span class="date">| 08/'21</span></h4>
                     <p>"Tutor de español para personas angloparlantes" </p>
@@ -218,7 +220,7 @@
                     </ul>
                 </div>
             </ul>
-            <ul class="old_exp">
+            <ul class="old_exp" data-aos="flip-left" data-aos-delay="300">
                 <li class="exp_card">
                     <h4>→ Conde S.A.</h4>
                     <div class="exp_details">
@@ -256,7 +258,7 @@
             </li>
         </ul>
         <a href="https://drive.google.com/file/d/1m5YqwTxYcEdbsZCs1_CSajBiBfZ66nxD/view?usp=sharing" target="_blank" id="download_cv">
-            <button type="button" class="button">DESCARGA ESTE C.V.</button>
+            <button type="button" class="button" data-aos="flip-down">DESCARGA ESTE C.V.</button>
         </a>
     </section>
     <div class="menu-finder">
@@ -277,6 +279,10 @@
                 <li class="download_icon"><a href="http://https://drive.google.com/file/d/1m5YqwTxYcEdbsZCs1_CSajBiBfZ66nxD/view?usp=sharing">💾</a></li>
             </ul>
         </div>
-    </div>  
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

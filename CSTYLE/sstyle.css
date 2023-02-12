@@ -131,8 +131,8 @@ ul {
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  overflow-x: hidden;
+  width: 100%;
+  overflow-x: clip;
 }
 
 section {
@@ -171,7 +171,7 @@ section {
 }
 .home .construction-label {
   position: absolute;
-  background-color: rgb(255, 230, 0);
+  background-color: #FFE68D;
   border: 7px solid black;
   width: 120vw;
   overflow: hidden;

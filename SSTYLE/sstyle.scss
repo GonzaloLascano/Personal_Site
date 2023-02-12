@@ -215,63 +215,107 @@ section {
 
 // Home ----------------
 
+@keyframes marquee {
+    from {
+      -moz-transform: translateX(0%);
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+    to {
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+
 .home{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.menu-screen {
-    position: relative;
-    top: 50%;
-    transform: translateY(-100%);
-    align-self: center;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @include button();
-    .menu {
-        width: 410px;
-        margin: 0;
-        padding: 25px 30px;
-        list-style: inside square;
-        box-sizing: border-box;
-        li {
-            margin: 30px 0px;
-        }
-        li::before {
-            position: absolute;
-            left: 30px;
-            content: '';
-            display: none;
-            height: 50px;
-            width: 50px;
-            background-image: url('../images/24686-5-tinycursor.png');
-            background-size: contain;
-        }
-        li:hover {
-            list-style-type: none;
-            padding-left: 60px;    
-        }
-        li:hover::before{
-            display: inline-block;
-        }
+    .construction-label:first-child {
+        left: -15%;
+        transform: rotate(330deg);
     }
-    div {
-        width: 100%;
-        text-align: center;
-        border-top: 7px solid black;
+    .construction-label:nth-child(2) {
+        right: -15%;
+        transform: rotate(14deg);
+        top: 32%;
+    }
+    .construction-label{
+        position: absolute;
+        background-color: rgb(255, 230, 0);
+        border: 7px solid black;
+        width: 120vw;
+        
+        overflow: hidden;
+        .bars {
+            font-weight: bold;
+        } 
         p {
-            margin: 10px 0px;
-            font-size: 2.2rem;
-            transform:rotate(-90deg);
-        }
+            width: max-content;
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-family: $accent-font;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+            span {
+                margin: 0 10px
+            }
+        };
     }
-    
-     
-}
+    .menu-screen {
+        background-color: white;
+        position: relative;
+        top: 50%;
+        transform: translateY(-100%);
+        align-self: center;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include button();
+        .menu {
+            width: 410px;
+            margin: 0;
+            padding: 25px 30px;
+            list-style: inside square;
+            box-sizing: border-box;
+            li {
+                margin: 30px 0px;
+            }
+            li::before {
+                position: absolute;
+                left: 30px;
+                content: '';
+                display: none;
+                height: 50px;
+                width: 50px;
+                background-image: url('../images/24686-5-tinycursor.png');
+                background-size: contain;
+            }
+            li:hover {
+                list-style-type: none;
+                padding-left: 60px;    
+            }
+            li:hover::before{
+                display: inline-block;
+            }
+        }
+        div {
+            width: 100%;
+            text-align: center;
+            border-top: 7px solid black;
+            p {
+                margin: 10px 0px;
+                font-size: 2.2rem;
+                transform:rotate(-90deg);
+            }
+        }
 
+
+    }
+}
 .my-name {
     margin: 10px 0 0 10px;
     display: flex;
@@ -610,6 +654,13 @@ section {
     .button {
         margin: 1rem 1rem;
     }
+    .home {
+        .construction-label:first-child {
+            left: 0;
+            transform: rotate(0deg);
+        }
+    }
+    
     .menu-screen .menu {
         width: min(84vw, 410px);
         a {

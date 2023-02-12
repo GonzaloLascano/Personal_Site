@@ -143,13 +143,56 @@ section {
   position: relative;
 }
 
+@keyframes marquee {
+  from {
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  to {
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
 .home {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-.menu-screen {
+.home .construction-label:first-child {
+  left: -15%;
+  transform: rotate(330deg);
+}
+.home .construction-label:nth-child(2) {
+  right: -15%;
+  transform: rotate(14deg);
+  top: 32%;
+}
+.home .construction-label {
+  position: absolute;
+  background-color: rgb(255, 230, 0);
+  border: 7px solid black;
+  width: 120vw;
+  overflow: hidden;
+}
+.home .construction-label .bars {
+  font-weight: bold;
+}
+.home .construction-label p {
+  width: max-content;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-family: "Press Start 2P", cursive;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+.home .construction-label p span {
+  margin: 0 10px;
+}
+.home .menu-screen {
+  background-color: white;
   position: relative;
   top: 50%;
   transform: translateY(-100%);
@@ -165,17 +208,17 @@ section {
   font-size: 1.2rem;
   font-weight: bold;
 }
-.menu-screen .menu {
+.home .menu-screen .menu {
   width: 410px;
   margin: 0;
   padding: 25px 30px;
   list-style: inside square;
   box-sizing: border-box;
 }
-.menu-screen .menu li {
+.home .menu-screen .menu li {
   margin: 30px 0px;
 }
-.menu-screen .menu li::before {
+.home .menu-screen .menu li::before {
   position: absolute;
   left: 30px;
   content: "";
@@ -185,19 +228,19 @@ section {
   background-image: url("../images/24686-5-tinycursor.png");
   background-size: contain;
 }
-.menu-screen .menu li:hover {
+.home .menu-screen .menu li:hover {
   list-style-type: none;
   padding-left: 60px;
 }
-.menu-screen .menu li:hover::before {
+.home .menu-screen .menu li:hover::before {
   display: inline-block;
 }
-.menu-screen div {
+.home .menu-screen div {
   width: 100%;
   text-align: center;
   border-top: 7px solid black;
 }
-.menu-screen div p {
+.home .menu-screen div p {
   margin: 10px 0px;
   font-size: 2.2rem;
   transform: rotate(-90deg);
@@ -563,6 +606,10 @@ section {
   }
   .button {
     margin: 1rem 1rem;
+  }
+  .home .construction-label:first-child {
+    left: 0;
+    transform: rotate(0deg);
   }
   .menu-screen .menu {
     width: min(84vw, 410px);

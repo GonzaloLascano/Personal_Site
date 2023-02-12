@@ -607,9 +607,24 @@ section {
   .button {
     margin: 1rem 1rem;
   }
+  .home {
+    padding-top: 0;
+  }
   .home .construction-label:first-child {
     left: 0;
     transform: rotate(0deg);
+    position: relative;
+    width: 100%;
+    border-right: 0;
+    border-left: 0;
+  }
+  .home .construction-label:nth-child(2) {
+    display: none;
+  }
+  .home .menu-screen {
+    top: 0;
+    transform: translateY(0);
+    margin: 3vw 0;
   }
   .menu-screen .menu {
     width: min(84vw, 410px);

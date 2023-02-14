@@ -10,7 +10,7 @@
     <title>Gonzalo Puñales Multimedia & Web Dev</title>
 </head>
 <body class="light">
-    <section class="home">
+    <section class="home" id="home">
         <div class="construction-label">
             <p class="construction-text">
                 <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
@@ -319,10 +319,12 @@
         </a>
     </section>
     <div class="menu-finder">
-        <div class="nav_burguer light">
+        <div class="burguer light">
             <span class="material-symbols-outlined burger_svg">
                 menu
-                </span>
+            </span>
+        </div>
+        <div class="nav_burguer light">
             <ul class="site_settings light">
                 <li class="flag_icon esp" id="set_eng" onclick="changeLanguage(espText, engText)">ENG</li>
                 <li class="flag_icon eng" id="set_esp" onclick="changeLanguage(engText, espText)">ESP</li>
@@ -332,9 +334,11 @@
                 </li>
             </ul>
             <ul class="site_sections">
-                <li class="info_icon"><a href="#about_me">📖</a></li>
-                <li class="contact_icon"><a href="#contact">👤</a></li>
-                <li class="download_icon"><a href="http://https://drive.google.com/file/d/1m5YqwTxYcEdbsZCs1_CSajBiBfZ66nxD/view?usp=sharing">💾</a></li>
+                <li class="info_icon"><a href="#home">🏠</a></li>
+                <li class="download_icon">
+                    <a class="esp" href="https://drive.google.com/file/d/1m5YqwTxYcEdbsZCs1_CSajBiBfZ66nxD/view?usp=sharing">💾</a>
+                    <a class="eng" href="https://drive.google.com/file/d/1SZMGUw7We0JJz8xPMKBBblY6SeuRbS0B/view?usp=share_link">💾</a>
+                </li>
             </ul>
         </div>
     </div>

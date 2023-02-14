@@ -5,7 +5,7 @@
 /* EMOJIS */
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 1300, "GRAD" -25, "opsz" 48;
-  font-size: 3vw;
+  font-size: 3rem;
 }
 
 /* -------- Variables --------*/
@@ -303,6 +303,30 @@ section {
   width: 150px;
   height: 300px;
 }
+.menu-finder .burguer {
+  border: 0.7rem solid black;
+  border-radius: 2.5rem;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 70px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.menu-finder .burguer.dark {
+  color: white;
+  border-color: white;
+  background-color: black;
+}
 .menu-finder .nav_burguer {
   display: none;
 }
@@ -329,9 +353,6 @@ section {
   font-family: "Space Mono", monospace;
   font-size: 1.2rem;
   font-weight: bold;
-}
-.nav_burguer .burger_svg {
-  display: none;
 }
 .nav_burguer ul {
   padding: 1.5vh 0;

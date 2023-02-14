@@ -12,7 +12,7 @@
   'wght' 1300,
   'GRAD' -25,
   'opsz' 48;
-  font-size: 3vw;
+  font-size: 3rem;
 }
 
 /* -------- Variables --------*/
@@ -372,6 +372,25 @@ section {
     right: 3%;
     width: 150px;
     height: 300px;
+    .burguer {
+        @include button();
+        margin: 15px;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 3%;
+        right: 3%;
+        width: 70px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        background-color: $lightestTone;
+    }
+    .burguer.dark{
+        color: $lightestTone;
+        border-color: $lightestTone;
+        background-color: $darkestTone;
+    }
     .nav_burguer {
         display: none;
     }
@@ -393,9 +412,6 @@ section {
     flex-direction: column;
     align-items: center;
     @include button();
-    .burger_svg {
-        display: none;
-    }
     ul {
         padding: 1.5vh 0;
         margin: 0;

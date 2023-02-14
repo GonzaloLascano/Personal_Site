@@ -40,6 +40,10 @@ h4 {
   margin: 0.5vw 0;
 }
 
+h4.dark {
+  color: white;
+}
+
 .menu-screen a, .menu-screen div p {
   font-family: "Press Start 2P", cursive;
   font-size: 2rem;
@@ -138,6 +142,8 @@ ul {
 
 .button.dark {
   border-color: white;
+  background-color: black;
+  color: white;
 }
 
 .button:hover {
@@ -254,6 +260,9 @@ section {
 .home .menu-screen .menu li:hover::before {
   display: inline-block;
 }
+.home .menu-screen .menu.dark {
+  color: white;
+}
 .home .menu-screen div {
   width: 100%;
   text-align: center;
@@ -265,7 +274,7 @@ section {
   transform: rotate(-90deg);
 }
 .home .menu-screen div.dark {
-  border-top: white;
+  border-top: 7px solid white;
 }
 .home .menu-screen.dark {
   background-color: black;
@@ -303,12 +312,6 @@ section {
   transform: translateX(0vw);
 }
 
-/* .light-theme {
-    display: none;
-}
-.eng {
-    display: none;
-} */
 .nav_burguer {
   padding: 0;
   position: absolute;
@@ -352,6 +355,7 @@ section {
 }
 .nav_burguer .site_settings.dark {
   border-color: white;
+  color: white;
 }
 
 .nav_burguer.dark {
@@ -473,6 +477,9 @@ section {
   flex-direction: column;
   justify-content: space-evenly;
 }
+.about_me .skills-box .softskills-container .softskills-list.dark {
+  color: white;
+}
 .about_me .skills-box .softskills-container .seed-icon {
   opacity: 50%;
   font-size: 5vh;
@@ -502,6 +509,9 @@ section {
   justify-content: space-around;
   list-style: none;
   word-break: break-all;
+}
+.about_me .skills-box .plusskills-container .plusskills-list.dark {
+  color: white;
 }
 .about_me .skills-box .plusskills-container .check-icon {
   opacity: 50%;
@@ -608,6 +618,9 @@ section {
 }
 .contact h1 {
   grid-area: title;
+}
+.contact .contact_list.dark {
+  color: white;
 }
 .contact .contact_list {
   box-sizing: border-box;

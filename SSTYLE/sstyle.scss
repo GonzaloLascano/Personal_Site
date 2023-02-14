@@ -112,6 +112,9 @@ h4 {
     font-size: $regular-size;
     margin: .5vw 0;
 }
+h4.dark {
+    color: $lightestTone;
+}
 
 .menu-screen a, .menu-screen div p {
     font-family: $accent-font;
@@ -211,6 +214,8 @@ ul{
 }
 .button.dark{
     border-color: $lightestTone;
+    background-color: $darkestTone;
+    color: $lightestTone;
 }
 .button:hover {
     transform: scale(1.1);
@@ -324,6 +329,9 @@ section {
                 display: inline-block;
             }
         }
+        .menu.dark {
+            color: $lightestTone;
+        }
         div {
             width: 100%;
             text-align: center;
@@ -335,7 +343,7 @@ section {
             }
         }
         div.dark {
-            border-top: $lightestTone;
+            border-top: 7px solid $lightestTone;
         }
     }
     .menu-screen.dark{
@@ -372,15 +380,6 @@ section {
     display: block;
     transform: translateX(0vw);
 }
-
-// Site Settings ---------------
-
-/* .light-theme {
-    display: none;
-}
-.eng {
-    display: none;
-} */
 
 .nav_burguer {
     padding: 0;
@@ -419,6 +418,7 @@ section {
     }
     .site_settings.dark {
         border-color: $lightestTone;
+        color: $lightestTone;
     }
 
 }
@@ -529,6 +529,9 @@ section {
                 flex-direction: column;
                 justify-content: space-evenly;
             }
+            .softskills-list.dark{
+                color: $lightestTone;
+            }
             .seed-icon {
                 @include skillType-icon(87%, -4.5%)
             }
@@ -550,6 +553,9 @@ section {
                 justify-content: space-around;
                 list-style: none;
                 word-break: break-all;
+            }
+            .plusskills-list.dark{
+                color: $lightestTone;
             }
             .check-icon{
                 @include skillType-icon(75%, 88%)
@@ -656,6 +662,9 @@ section {
     }
     h1 {
         grid-area: title;
+    }
+    .contact_list.dark{
+        color: $lightestTone;
     }
     .contact_list{
         box-sizing: border-box;

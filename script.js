@@ -2,20 +2,19 @@
 
 /*----- Selecting DOM elements */
 
-let dowloadButton = document.getElementById('download_cv_eng'); //English download button
 let engText = document.getElementsByClassName('eng'); //English text
 let espText = document.getElementsByClassName('esp'); //Spanish text
-let espTrigger = document.getElementById('set_esp'); //Spanish trigger button
-let engTrigger = document.getElementById('set_eng'); //English trigger button
 let lightTrigger = document.getElementById('set_light'); //Light theme trigger
-let darkTrigger = document.getElementById('set_dark'); //Light theme trigger
 
 /*----- Setting default values*/
 
 //Language
+
 for (text of engText) {
     text.style.display = 'none';
 }
+lightTrigger.style.display = 'none';
+
 /*----- Functions */
 
 function changeLanguage(fromLanguage, toLanguage) {
@@ -31,11 +30,14 @@ function changeLanguage(fromLanguage, toLanguage) {
 function changeTheme(toTheme) {
     let fromTheme;
     toTheme == 'light' ? fromTheme = 'dark' : fromTheme = 'light'
-    let tags = document.getElementsByClassName(fromTheme);
-    console.log('changing theme!');
-    for (element of tags) {
+    let iconToHide = document.getElementById('set_' + toTheme);
+    let iconToShow = document.getElementById('set_' + fromTheme);
+    iconToHide.style.display = 'none';
+    iconToShow.style.display = null;
+    let tags = Array.from(document.getElementsByClassName(fromTheme));
+    tags.forEach((element) => {
         element.classList.replace(fromTheme, toTheme);
-    }
+    });
 }
 
 /*----- DOM event listeners */ 

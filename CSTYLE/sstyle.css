@@ -276,6 +276,12 @@ section {
   transform: translateX(0vw);
 }
 
+/* .light-theme {
+    display: none;
+}
+.eng {
+    display: none;
+} */
 .nav_burguer {
   padding: 0;
   position: absolute;
@@ -316,9 +322,6 @@ section {
 }
 .nav_burguer .site_settings .flag_icon {
   font-size: 69%;
-}
-.nav_burguer .site_settings .light-theme {
-  display: none;
 }
 
 .about_me {

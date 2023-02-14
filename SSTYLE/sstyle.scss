@@ -345,6 +345,15 @@ section {
     transform: translateX(0vw);
 }
 
+// Site Settings ---------------
+
+/* .light-theme {
+    display: none;
+}
+.eng {
+    display: none;
+} */
+
 .nav_burguer {
     padding: 0;
     position: absolute;
@@ -378,9 +387,6 @@ section {
         border-bottom: 7px solid black;
         .flag_icon {
             font-size: 69%;
-        }
-        .light-theme {
-            display: none;
         }
     }
 

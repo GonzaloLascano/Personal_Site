@@ -235,7 +235,7 @@
             <div class="exp-title">    
                 <div class="subsection-icon">👨‍💻</div>
                 <h2 class="esp">Experiencia:</h2>
-                <h2 class="eng">Experiencia:</h2>
+                <h2 class="eng">experience:</h2>
             </div>
             <ul class="recent_exp" data-aos="flip-left" data-aos-delay="300">
                 <div>
@@ -323,11 +323,11 @@
                 menu
                 </span>
             <ul class="site_settings">
-                <li class="flag_icon esp">ENG</li>
-                <li class="flag_icon eng">ESP</li>
+                <li class="flag_icon esp" id="set_eng" onclick="changeLanguage(espText, engText)">ENG</li>
+                <li class="flag_icon eng" id="set_esp" onclick="changeLanguage(engText, espText)">ESP</li>
                 <li class="theme_icon">
-                    <span class="light-theme">☀️</span>
-                    <span class="dark-theme">🌙</span>
+                    <span class="dark-theme" id="set_light">☀️</span>
+                    <span class="light-theme" id="set_dark">🌙</span>
                 </li>
             </ul>
             <ul class="site_sections">
@@ -341,5 +341,6 @@
     <script>
         AOS.init();
     </script>
+    <script src="script.js"></script>
 </body>
 </html>

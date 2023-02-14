@@ -13,14 +13,9 @@ let darkTrigger = document.getElementById('set_dark'); //Light theme trigger
 /*----- Setting default values*/
 
 //Language
-dowloadButton.style.display = 'none';
-for (text of espText) {
+for (text of engText) {
     text.style.display = 'none';
 }
-
-//Theme
-lightTrigger.style.display= 'none';
-
 /*----- Functions */
 
 function changeLanguage(fromLanguage, toLanguage) {
@@ -30,6 +25,16 @@ function changeLanguage(fromLanguage, toLanguage) {
     }
     for (text of fromLanguage) {
         text.style.display = 'none';
+    }
+}
+
+function changeTheme(toTheme) {
+    let fromTheme;
+    toTheme == 'light' ? fromTheme = 'dark' : fromTheme = 'light'
+    let tags = document.getElementsByClassName(fromTheme);
+    console.log('changing theme!');
+    for (element of tags) {
+        element.classList.replace(fromTheme, toTheme);
     }
 }
 

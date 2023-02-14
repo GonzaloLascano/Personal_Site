@@ -17,6 +17,10 @@ h1 {
   font-size: 2.5rem;
 }
 
+h1.dark {
+  color: white;
+}
+
 h2 {
   margin: 0;
   color: grey;
@@ -42,9 +46,17 @@ h4 {
   color: black;
 }
 
+.menu-screen a.dark, .menu-screen div p.dark {
+  color: white;
+}
+
 p {
   font-family: "Space Mono", monospace;
   font-size: 1.2rem;
+}
+
+p.dark {
+  color: white;
 }
 
 a {
@@ -124,6 +136,10 @@ ul {
   font-weight: bold;
 }
 
+.button.dark {
+  border-color: white;
+}
+
 .button:hover {
   transform: scale(1.1);
 }
@@ -133,6 +149,10 @@ body {
   padding: 0;
   width: 100%;
   overflow-x: clip;
+}
+
+body.dark {
+  background-color: black;
 }
 
 section {
@@ -244,6 +264,13 @@ section {
   font-size: 2.2rem;
   transform: rotate(-90deg);
 }
+.home .menu-screen div.dark {
+  border-top: white;
+}
+.home .menu-screen.dark {
+  background-color: black;
+  border-color: white;
+}
 
 .my-name {
   margin: 10px 0 0 10px;
@@ -323,6 +350,14 @@ section {
 .nav_burguer .site_settings .flag_icon {
   font-size: 69%;
 }
+.nav_burguer .site_settings.dark {
+  border-color: white;
+}
+
+.nav_burguer.dark {
+  background-color: black;
+  border-color: white;
+}
 
 .about_me {
   box-sizing: border-box;
@@ -382,6 +417,9 @@ section {
   height: fit-content;
   align-self: end;
 }
+.about_me .skills-box .hardskills-container.dark {
+  background-color: rgb(51, 51, 51);
+}
 .about_me .skills-box .hardskills-container {
   grid-area: hard;
   margin-left: 2vw;
@@ -414,6 +452,9 @@ section {
   align-content: space-evenly;
   list-style: none;
 }
+.about_me .skills-box .softskills-container.dark {
+  background-color: rgb(51, 51, 51);
+}
 .about_me .skills-box .softskills-container {
   grid-area: soft;
   justify-self: center;
@@ -438,6 +479,9 @@ section {
   position: absolute;
   bottom: 87%;
   left: -4.5%;
+}
+.about_me .skills-box .plusskills-container.dark {
+  background-color: rgb(51, 51, 51);
 }
 .about_me .skills-box .plusskills-container {
   grid-area: plus;
@@ -492,7 +536,7 @@ section {
 .chronology .date {
   display: inline-block;
   margin-left: 0.5vw;
-  color: gray;
+  color: grey;
   font-weight: 400;
 }
 .chronology .ed, .chronology .exp {
@@ -512,6 +556,9 @@ section {
   padding: 0 1vw 1vw 3vw;
   border: 7px solid rgb(255, 223, 193);
   border-radius: 2.5vw;
+}
+.chronology .old_ed.dark, .chronology .old_exp.dark {
+  background-color: rgb(51, 51, 51);
 }
 .chronology .old_ed, .chronology .old_exp {
   margin-left: 2vw;
@@ -534,7 +581,7 @@ section {
   background-color: white;
   border-radius: 18px;
   padding: 0 1vw;
-  box-shadow: 5px 5px 0px 5px grey;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
 }
 .chronology .old_ed .exp_card:hover, .chronology .old_exp .exp_card:hover {
   position: relative;
@@ -592,7 +639,7 @@ section {
 .contact .contact_list li div {
   display: inline;
 }
-.contact #download_cv {
+.contact #download_cv, .contact #download_cv_eng {
   align-self: center;
   justify-self: center;
   width: max-content;
@@ -600,6 +647,13 @@ section {
   margin: 3vh 8vh;
   grid-area: button;
   color: black;
+}
+.contact #download_cv.dark, .contact #download_cv_eng.dark {
+  color: white;
+}
+
+.contact.dark {
+  background-color: rgb(51, 51, 51);
 }
 
 @media only screen and (max-width: 992px) {

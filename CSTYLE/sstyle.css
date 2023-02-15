@@ -138,6 +138,7 @@ ul {
   font-family: "Space Mono", monospace;
   font-size: 1.2rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .button.dark {
@@ -150,11 +151,14 @@ ul {
   transform: scale(1.1);
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: clip;
 }
 
 body.dark {
@@ -185,6 +189,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 .home .construction-label:first-child {
   left: -15%;
@@ -232,6 +237,7 @@ section {
   font-family: "Space Mono", monospace;
   font-size: 1.2rem;
   font-weight: bold;
+  cursor: pointer;
 }
 .home .menu-screen .menu {
   width: 410px;
@@ -298,10 +304,8 @@ section {
 .menu-finder {
   padding: 0;
   position: fixed;
-  top: 3%;
-  right: 3%;
-  width: 150px;
-  height: 300px;
+  top: 2.5%;
+  right: 150px;
 }
 .menu-finder .burguer {
   border: 0.7rem solid black;
@@ -310,13 +314,11 @@ section {
   font-family: "Space Mono", monospace;
   font-size: 1.2rem;
   font-weight: bold;
-  margin: 15px;
+  cursor: pointer;
+  position: absolute;
   display: flex;
   justify-content: center;
-  position: absolute;
-  top: 3%;
-  right: 3%;
-  width: 70px;
+  width: 90px;
   height: 50px;
   justify-content: center;
   align-items: center;
@@ -333,16 +335,12 @@ section {
 
 .menu-finder:hover .nav_burguer {
   display: block;
-  transform: translateX(0vw);
 }
 
 .nav_burguer {
-  padding: 0;
   position: absolute;
-  top: 3%;
-  right: 3%;
+  padding: 0;
   width: 90px;
-  transform: translateX(30vw);
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -353,6 +351,7 @@ section {
   font-family: "Space Mono", monospace;
   font-size: 1.2rem;
   font-weight: bold;
+  cursor: pointer;
 }
 .nav_burguer ul {
   padding: 1.5vh 0;
@@ -716,6 +715,10 @@ section {
     transform: translateY(0);
     margin: 3vw 0;
   }
+  .menu-finder {
+    top: 6.5%;
+    right: 100px;
+  }
   .menu-screen .menu {
     width: min(84vw, 410px);
   }
@@ -778,7 +781,7 @@ section {
     grid-template-rows: max-content 1fr;
     grid-template-areas: "icon title" "icon list" "icon button";
   }
-  .contact #download_cv {
+  .contact #download_cv, .contact #download_cv_eng {
     margin: 3vh 0;
   }
 }

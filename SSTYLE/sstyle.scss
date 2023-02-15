@@ -58,6 +58,7 @@ $boxShadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba
     font-family: $text-font;
     font-size: $regular-size;
     font-weight: bold;
+    cursor: pointer;
 }
 //SKILLS
 @mixin skill-boxes {
@@ -223,11 +224,13 @@ ul{
 
 //______SECTIONS________
 
+body, html {
+    overflow-x: hidden;
+}
 body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: clip;
 }
 body.dark {
     background-color: $darkestTone;
@@ -260,6 +263,7 @@ section {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
     .construction-label:first-child {
         left: -15%;
         transform: rotate(330deg);
@@ -274,7 +278,6 @@ section {
         background-color: $constructionTone;
         border: 7px solid $darkestTone;
         width: 120vw;
-        
         overflow: hidden;
         .bars {
             font-weight: bold;
@@ -368,19 +371,14 @@ section {
 .menu-finder {
     padding: 0;
     position: fixed;
-    top: 3%;
-    right: 3%;
-    width: 150px;
-    height: 300px;
+    top: 2.5%;
+    right: 150px;
     .burguer {
         @include button();
-        margin: 15px;
+        position: absolute;
         display: flex;
         justify-content: center;
-        position: absolute;
-        top: 3%;
-        right: 3%;
-        width: 70px;
+        width: 90px;
         height: 50px;
         justify-content: center;
         align-items: center;
@@ -397,16 +395,12 @@ section {
 }
 .menu-finder:hover .nav_burguer{
     display: block;
-    transform: translateX(0vw);
 }
 
 .nav_burguer {
-    padding: 0;
     position: absolute;
-    top: 3%;
-    right: 3%;
+    padding: 0;
     width: 90px;
-    transform: translateX(30vw);
     background-color: $lightestTone;
     display: flex;
     flex-direction: column;
@@ -756,7 +750,10 @@ section {
             margin: 3vw 0;
         }
     }
-    
+    .menu-finder {
+        top: 6.5%;
+        right: 100px;
+    }
     .menu-screen .menu {
         width: min(84vw, 410px);
         a {
@@ -829,7 +826,7 @@ section {
         "icon title"
         "icon list"
         "icon button";
-        #download_cv {
+        #download_cv, #download_cv_eng  {
             margin: 3vh 0;
         }
 

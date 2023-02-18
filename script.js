@@ -5,6 +5,8 @@
 let engText = document.getElementsByClassName('eng'); //English text
 let espText = document.getElementsByClassName('esp'); //Spanish text
 let lightTrigger = document.getElementById('set_light'); //Light theme trigger
+let home = document.getElementById('home'); //Burger button... can you believe?
+let burgerButton = document.getElementById('burguer-button')
 
 /*----- Setting default values*/
 
@@ -45,3 +47,19 @@ function changeTheme(toTheme) {
 /* espTrigger.addEventListener('click', changeLanguage(engText, espText));
 engTrigger.addEventListener('click', changeLanguage(espText, engText));
 for some reason this executes at starting and wont listen*/
+
+/* ----- Scrolling animation for Burger Menu */
+
+const observer = new IntersectionObserver ((entry) => {
+    console.log(entry);
+    entry.forEach((entry) => {
+        if(entry.isIntersecting == false) {
+            burgerButton.classList.add('show-burguer');
+        } else {
+            burgerButton.classList.remove('show-burguer')
+        }
+    })
+    
+}) //observer for burger-button
+
+observer.observe(home);

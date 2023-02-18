@@ -323,6 +323,8 @@ section {
   justify-content: center;
   align-items: center;
   background-color: white;
+  opacity: 0;
+  transition: all 1s;
 }
 .menu-finder .burguer.dark {
   color: white;
@@ -331,6 +333,9 @@ section {
 }
 .menu-finder .nav_burguer {
   display: none;
+}
+.menu-finder .show-burguer {
+  opacity: 1;
 }
 
 .menu-finder:hover .nav_burguer {

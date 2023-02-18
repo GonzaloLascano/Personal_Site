@@ -383,6 +383,8 @@ section {
         justify-content: center;
         align-items: center;
         background-color: $lightestTone;
+        opacity: 0;
+        transition: all 1s;
     }
     .burguer.dark{
         color: $lightestTone;
@@ -391,6 +393,9 @@ section {
     }
     .nav_burguer {
         display: none;
+    }
+    .show-burguer {
+        opacity: 1;
     }
 }
 .menu-finder:hover .nav_burguer{

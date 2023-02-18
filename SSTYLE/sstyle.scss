@@ -302,7 +302,7 @@ section {
         align-self: center;
         width: fit-content;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         @include button();
         .menu {
@@ -338,15 +338,21 @@ section {
         div {
             width: 100%;
             text-align: center;
-            border-top: 7px solid $darkestTone;
+            border-bottom: 7px solid $darkestTone;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
             p {
-                margin: 10px 0px;
-                font-size: 2.2rem;
-                transform:rotate(-90deg);
+                margin: 10px;
+                font-size: $regular-size;
+            }
+            .set_dark, .set_light{
+                padding-bottom: 6px;
+                margin-right: 16px;
             }
         }
         div.dark {
-            border-top: 7px solid $lightestTone;
+            border-bottom: 7px solid $lightestTone;
         }
     }
     .menu-screen.dark{

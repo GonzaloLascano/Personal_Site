@@ -4,7 +4,7 @@
 
 let engText = document.getElementsByClassName('eng'); //English text
 let espText = document.getElementsByClassName('esp'); //Spanish text
-let lightTrigger = document.getElementById('set_light'); //Light theme trigger
+let lightTrigger = Array.from(document.getElementsByClassName('set_light')); //Light theme trigger
 let home = document.getElementById('home'); //Burger button... can you believe?
 let burgerButton = document.getElementById('burguer-button')
 
@@ -15,7 +15,8 @@ let burgerButton = document.getElementById('burguer-button')
 for (text of engText) {
     text.style.display = 'none';
 }
-lightTrigger.style.display = 'none';
+
+lightTrigger.forEach((trigger) => { trigger.style.display = 'none' });
 
 /*----- Functions */
 
@@ -32,10 +33,14 @@ function changeLanguage(fromLanguage, toLanguage) {
 function changeTheme(toTheme) {
     let fromTheme;
     toTheme == 'light' ? fromTheme = 'dark' : fromTheme = 'light'
-    let iconToHide = document.getElementById('set_' + toTheme);
-    let iconToShow = document.getElementById('set_' + fromTheme);
-    iconToHide.style.display = 'none';
-    iconToShow.style.display = null;
+    let iconsToHide = Array.from(document.getElementsByClassName('set_' + toTheme)); 
+    let iconsToShow = Array.from(document.getElementsByClassName(('set_' + fromTheme))); 
+    iconsToHide.forEach((icon) => {
+        icon.style.display = 'none';
+    })
+    iconsToShow.forEach((icon) => {
+        icon.style.display = null;
+    })
     let tags = Array.from(document.getElementsByClassName(fromTheme));
     tags.forEach((element) => {
         element.classList.replace(fromTheme, toTheme);

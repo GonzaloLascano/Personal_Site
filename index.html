@@ -48,7 +48,10 @@
                 </li>
             </ul>
             <div class="light">
-                <p class="light">»</p>
+                <p class="flag_icon light esp" onclick="changeLanguage(espText, engText)">ENG</p>
+                <p class="flag_icon light eng" onclick="changeLanguage(engText, espText)">ESP</p>
+                <p class="set_light" onclick="changeTheme('light')">☀️</p>
+                <p class="set_dark"  onclick="changeTheme('dark')">🌙</p>
             </div>
         </div>
         <div 
@@ -327,11 +330,11 @@
         </div>
         <div class="nav_burguer light">
             <ul class="site_settings light">
-                <li class="flag_icon esp" id="set_eng" onclick="changeLanguage(espText, engText)">ENG</li>
-                <li class="flag_icon eng" id="set_esp" onclick="changeLanguage(engText, espText)">ESP</li>
+                <li class="flag_icon esp light" onclick="changeLanguage(espText, engText)">ENG</li>
+                <li class="flag_icon eng light" onclick="changeLanguage(engText, espText)">ESP</li>
                 <li class="theme_icon">
-                    <span id="set_light" onclick="changeTheme('light')">☀️</span>
-                    <span id="set_dark" onclick="changeTheme('dark')">🌙</span>
+                    <span class="set_light" onclick="changeTheme('light')">☀️</span>
+                    <span class="set_dark" onclick="changeTheme('dark')">🌙</span>
                 </li>
             </ul>
             <ul class="site_sections">

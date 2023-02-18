@@ -229,7 +229,7 @@ section {
   align-self: center;
   width: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   border: 0.7rem solid black;
   border-radius: 2.5rem;
@@ -272,15 +272,21 @@ section {
 .home .menu-screen div {
   width: 100%;
   text-align: center;
-  border-top: 7px solid black;
+  border-bottom: 7px solid black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .home .menu-screen div p {
-  margin: 10px 0px;
-  font-size: 2.2rem;
-  transform: rotate(-90deg);
+  margin: 10px;
+  font-size: 1.2rem;
+}
+.home .menu-screen div .set_dark, .home .menu-screen div .set_light {
+  padding-bottom: 6px;
+  margin-right: 16px;
 }
 .home .menu-screen div.dark {
-  border-top: 7px solid white;
+  border-bottom: 7px solid white;
 }
 .home .menu-screen.dark {
   background-color: black;

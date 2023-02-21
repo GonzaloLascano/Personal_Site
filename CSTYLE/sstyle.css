@@ -307,13 +307,13 @@ section {
   margin: 3px 0;
 }
 
-.menu-finder {
+#menu-finder {
   padding: 0;
   position: fixed;
   top: 2.5%;
   right: 150px;
 }
-.menu-finder .burguer {
+#menu-finder .burguer {
   border: 0.7rem solid black;
   border-radius: 2.5rem;
   box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
@@ -332,19 +332,19 @@ section {
   opacity: 0;
   transition: all 1s;
 }
-.menu-finder .burguer.dark {
+#menu-finder .burguer.dark {
   color: white;
   border-color: white;
   background-color: black;
 }
-.menu-finder .nav_burguer {
+#menu-finder .nav_burguer {
   display: none;
 }
-.menu-finder .show-burguer {
+#menu-finder .show-burguer {
   opacity: 0.5;
 }
 
-.menu-finder:hover .nav_burguer {
+#menu-finder:hover .nav_burguer {
   display: block;
 }
 
@@ -462,7 +462,58 @@ section {
   display: flex;
   border-radius: 3vw;
   background-color: rgb(245, 245, 245);
+  justify-content: center;
+  align-items: center;
   margin: 0;
+}
+.about_me .skills-box .hardskills-container .tech_card {
+  border: 0.7rem solid black;
+  border-radius: 2.5rem;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  padding: 16px;
+  margin: 16px;
+  z-index: 2;
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.2s;
+  cursor: default;
+}
+.about_me .skills-box .hardskills-container .tech_card .close {
+  position: absolute;
+  top: 5%;
+  left: 90%;
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+}
+.about_me .skills-box .hardskills-container .tech_card .tech_logo {
+  width: 40%;
+}
+.about_me .skills-box .hardskills-container .tech_card .tech_info {
+  background-color: white;
+}
+.about_me .skills-box .hardskills-container .tech_card .tech_info p {
+  margin: 3px;
+  font-weight: bolder;
+}
+.about_me .skills-box .hardskills-container .tech_card .tech_info .tech_name {
+  margin: 10px;
+  display: block;
+  text-align: center;
+}
+.about_me .skills-box .hardskills-container .tech_card.show {
+  opacity: 1;
+  transform: translateX(0px);
 }
 .about_me .skills-box .hardskills-container .diamond-icon {
   opacity: 50%;
@@ -486,6 +537,13 @@ section {
   justify-items: center;
   align-content: space-evenly;
   list-style: none;
+}
+.about_me .skills-box .hardskills-container .hardskills-list .hardskill {
+  display: flex;
+  cursor: pointer;
+}
+.about_me .skills-box .hardskills-container .hardskills-list .hardskill:hover {
+  transform: scale(1.2);
 }
 .about_me .skills-box .softskills-container.dark {
   background-color: rgb(51, 51, 51);

@@ -374,7 +374,7 @@ section {
     }
 }
 
-.menu-finder {
+#menu-finder {
     padding: 0;
     position: fixed;
     top: 2.5%;
@@ -404,7 +404,7 @@ section {
         opacity: 0.5;
     }
 }
-.menu-finder:hover .nav_burguer{
+#menu-finder:hover .nav_burguer{
     display: block;
 }
 
@@ -513,7 +513,53 @@ section {
         .hardskills-container {
             grid-area: hard;
             @include skill-boxes();
+            justify-content: center;
+            align-items: center;
             margin: 0;
+            .tech_card {
+                @include button();
+                position: absolute;
+                padding: 16px;
+                margin: 16px;
+                z-index: 2;
+                max-width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                background-color: white;
+                opacity: 0;
+                transform: translateX(20px);
+                transition: all .2s;
+                cursor: default;
+                .close {
+                    position: absolute;
+                    top: 5%;
+                    left: 90%;
+                    font-family: $accent-font;
+                    cursor: pointer;
+                }
+                .tech_logo {
+                    width: 40%
+                }
+                .tech_info {
+                    background-color: $lightestTone;
+
+                    p {
+                        margin: 3px;
+                        font-weight: bolder;
+                    }
+                    .tech_name{
+                        margin: 10px;
+                        display: block;
+                        text-align: center;
+                    }    
+                }
+            }
+            .tech_card.show {
+                opacity: 1;
+                transform: translateX(0px);
+            }
             .diamond-icon {
                 @include skillType-icon;
             }
@@ -532,6 +578,13 @@ section {
                 justify-items: center;
                 align-content: space-evenly;
                 list-style: none;
+                .hardskill{
+                    display: flex;
+                    cursor: pointer;
+                }
+                .hardskill:hover {
+                    transform: scale(1.2);
+                }
             }
         }
         .softskills-container.dark {

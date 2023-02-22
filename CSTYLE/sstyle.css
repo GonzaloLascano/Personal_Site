@@ -330,7 +330,7 @@ section {
   align-items: center;
   background-color: white;
   opacity: 0;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 #menu-finder .burguer.dark {
   color: white;
@@ -466,7 +466,7 @@ section {
   align-items: center;
   margin: 0;
 }
-.about_me .skills-box .hardskills-container .tech_card {
+.about_me .skills-box .hardskills-container #tech_card {
   border: 0.7rem solid black;
   border-radius: 2.5rem;
   box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
@@ -478,7 +478,8 @@ section {
   padding: 16px;
   margin: 16px;
   z-index: 2;
-  max-width: 80%;
+  max-width: 400px;
+  min-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -489,29 +490,30 @@ section {
   transition: all 0.2s;
   cursor: default;
 }
-.about_me .skills-box .hardskills-container .tech_card .close {
+.about_me .skills-box .hardskills-container #tech_card .close {
   position: absolute;
   top: 5%;
   left: 90%;
   font-family: "Press Start 2P", cursive;
   cursor: pointer;
 }
-.about_me .skills-box .hardskills-container .tech_card .tech_logo {
+.about_me .skills-box .hardskills-container #tech_card .tech_logo {
   width: 40%;
 }
-.about_me .skills-box .hardskills-container .tech_card .tech_info {
+.about_me .skills-box .hardskills-container #tech_card .tech_info {
   background-color: white;
+  max-width: 90%;
 }
-.about_me .skills-box .hardskills-container .tech_card .tech_info p {
+.about_me .skills-box .hardskills-container #tech_card .tech_info p {
   margin: 3px;
   font-weight: bolder;
 }
-.about_me .skills-box .hardskills-container .tech_card .tech_info .tech_name {
+.about_me .skills-box .hardskills-container #tech_card .tech_info .tech_name {
   margin: 10px;
   display: block;
   text-align: center;
 }
-.about_me .skills-box .hardskills-container .tech_card.show {
+.about_me .skills-box .hardskills-container #tech_card.show {
   opacity: 1;
   transform: translateX(0px);
 }

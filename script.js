@@ -1,8 +1,6 @@
 /* --------------Scripts for Setting Language and Theme---------------- */
 
 /* ----- Constructing objects to render */
-
-let currentLanguage = 'esp'
 class Hardskill {
     constructor(name, time, related) {
         this.name = name;
@@ -11,21 +9,18 @@ class Hardskill {
     }
 } 
 
-const html5 = new Hardskill('HTML5', 2, 'none');
-const css3 = new Hardskill('CSS3', 2, [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
-]);
-const js = new Hardskill ('Javascript', 2, 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg');
-const react = new Hardskill ('React JS', 1, 'none');
-const node = new Hardskill ('Node JS', 1, 'none');
-const express = new Hardskill ('Express JS', 1, 'none'); //add special names
-const mongo = new Hardskill ('Mongo DB', 1, 'none');
-const git = new Hardskill ('Git', 2, ['https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg']);
-const photoshop = new Hardskill ('Photoshop', 5, 'none');
-const illustrator = new Hardskill ('Illustrator', 2, 'none');
-const premierePro = new Hardskill ('Premiere Pro', 5, 'none');
-const blender = new Hardskill ('Blender', 5, 'none');
+const html5 = new Hardskill('HTML5', 2, ['none']);
+const css3 = new Hardskill('CSS3', 2, ['Bootstrap','Sass']);
+const js = new Hardskill ('Javascript', 2, ['JQuery']);
+const react = new Hardskill ('React JS', 1, ['none']);
+const node = new Hardskill ('Node JS', 1, ['passport', 'dotenv', 'log4js', 'mocha', '+...']);
+const express = new Hardskill ('Express JS', 1, ['Handlebars']); //add special names
+const mongo = new Hardskill ('Mongo DB', 1, ['mongoose']);
+const git = new Hardskill ('Git', 2, ['GitHub']);
+const photoshop = new Hardskill ('Photoshop', 5, ['none']);
+const illustrator = new Hardskill ('Illustrator', 2, ['none']);
+const premierePro = new Hardskill ('Premiere Pro', 5, ['none']);
+const blender = new Hardskill ('Blender', 5, ['none']);
 
 const hardSkills = [
     html5,
@@ -44,21 +39,22 @@ const hardSkills = [
 
 /*----- Selecting DOM elements */
 
-let engText = document.getElementsByClassName('eng'); //English text
-let espText = document.getElementsByClassName('esp'); //Spanish text
 let lightTrigger = Array.from(document.getElementsByClassName('set_light')); //Light theme trigger
 let techieLogos = Array.from(document.getElementsByClassName('tech_logo'));
 let home = document.getElementById('home'); //Burger button... can you believe?
 let burgerButton = document.getElementById('burguer-button');
 let menuFinder = document.getElementById('menu-finder');
 let hardSkilssContainer = document.getElementById('hardskills-container');
+let techCard = false;
 console.log(menuFinder);
 
 /*----- Setting default values*/
 
 //Language
+let currentLanguage = 'esp';
+let defaultHiddenText = Array.from(document.getElementsByClassName('eng')); 
 
-for (text of engText) {
+for (text of defaultHiddenText) {
     text.style.display = 'none';
 }
 
@@ -67,14 +63,19 @@ lightTrigger.forEach((trigger) => { trigger.style.display = 'none' });
 /*----- Functions */
 
 function changeLanguage(fromLanguage, toLanguage) {
+    if (techCard) {
+        deleteTechCard();
+    };
     console.log('changing language');
-    currentLanguage = toLanguage;
-    for (text of toLanguage) {
+    let hideText = Array.from(document.getElementsByClassName(fromLanguage));
+    let showText = Array.from(document.getElementsByClassName(toLanguage));
+    for (text of showText) {
         text.style.display = null;
     }
-    for (text of fromLanguage) {
+    for (text of hideText) {
         text.style.display = 'none';
     }
+    currentLanguage = toLanguage;
 }
 
 function changeTheme(toTheme) {
@@ -95,8 +96,8 @@ function changeTheme(toTheme) {
 }
 
 function deleteTechCard() {
-    console.log('holandaaa');
     hardSkilssContainer.removeChild(hardSkilssContainer.lastElementChild);
+    techCard = false;
 }
 
 /* ----- Scrolling animation for Burger Menu */
@@ -125,33 +126,40 @@ observer.observe(home);
 /* ----- Tech Card Rendering */
 
 const techCardRenderer = e => {
+
     let techName = e.target.alt;
     let techLogo = e.target.src;
-    console.log(currentLanguage);
     let reqTech = hardSkills.find(element => element.name == techName);
-    let timeText
-    let mentionText
+    let timeText;
+    let mention;
+    let mentionContent = reqTech.related.join(', ');
     if(currentLanguage == 'esp') {
         timeText = 'año/s de exp.'
-        mentionText = 'Mención Especial'
+        mention= 'Mención Especial'
     } else {
         timeText = 'year/s of exp.'
-        mentionText = 'Special Mention'
+        mention = 'Special Mention'
     }
-    let card = document.createElement('div');
-    card.classList.add('tech_card');
+    let card; 
+    if (techCard) {
+        card = document.getElementById('tech_card');
+    } else {
+        card = document.createElement('div');
+        card.setAttribute('id', 'tech_card');
+        hardSkilssContainer.appendChild(card);
+        techCard = true;
+    }
     card.innerHTML =`
         <div class="close" alt="close/cerrar" onclick="deleteTechCard()">X</div>
         <img class="tech_logo" src="${techLogo}" alt="HTML5"/>
         <div class="tech_info">
             <p class="tech_name">${reqTech.name}</p>
             <P>⏱: ${reqTech.time} ${timeText}</P>
-            <p>${mentionText}:
-                <span id="mentions">none</span>
+            <p>${mention}:
+                <span id="mentions">${mentionContent}</span>
             </p>    
         </div>
-    `
-    hardSkilssContainer.appendChild(card);
+    `;
     setTimeout(() => {
         console.log('wait')  
         card.classList.add('show')

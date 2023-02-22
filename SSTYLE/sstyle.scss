@@ -390,7 +390,7 @@ section {
         align-items: center;
         background-color: $lightestTone;
         opacity: 0;
-        transition: all 1s;
+        transition: all .5s;
     }
     .burguer.dark{
         color: $lightestTone;
@@ -516,13 +516,14 @@ section {
             justify-content: center;
             align-items: center;
             margin: 0;
-            .tech_card {
+            #tech_card {
                 @include button();
                 position: absolute;
                 padding: 16px;
                 margin: 16px;
                 z-index: 2;
-                max-width: 80%;
+                max-width: 400px;
+                min-width: 350px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -544,6 +545,7 @@ section {
                 }
                 .tech_info {
                     background-color: $lightestTone;
+                    max-width: 90%;
 
                     p {
                         margin: 3px;
@@ -556,7 +558,7 @@ section {
                     }    
                 }
             }
-            .tech_card.show {
+            #tech_card.show {
                 opacity: 1;
                 transform: translateX(0px);
             }

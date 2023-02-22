@@ -508,6 +508,9 @@ section {
   margin: 3px;
   font-weight: bolder;
 }
+.about_me .skills-box .hardskills-container #tech_card .tech_info p span {
+  color: grey;
+}
 .about_me .skills-box .hardskills-container #tech_card .tech_info .tech_name {
   margin: 10px;
   display: block;

@@ -550,6 +550,9 @@ section {
                     p {
                         margin: 3px;
                         font-weight: bolder;
+                        span {
+                            color: $softer;
+                        }
                     }
                     .tech_name{
                         margin: 10px;

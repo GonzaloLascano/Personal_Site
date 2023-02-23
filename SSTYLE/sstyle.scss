@@ -814,20 +814,21 @@ section {
             display: none;
         }
         .menu-screen {
+            width: 350px;
             top: 0;
             transform: translateY(0);
             margin: 3vw 0;
+            .menu {
+                width: 350px;
+                a {
+                    font-size: 128%;
+                }
+            }
         }
     }
     .menu-finder {
         top: 6.5%;
         right: 100px;
-    }
-    .menu-screen .menu {
-        width: min(84vw, 410px);
-        a {
-            font-size: 128%;
-        }
     }
     .about_me {
         padding: 5vh 0;

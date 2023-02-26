@@ -5,7 +5,7 @@
 /* EMOJIS */
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 1300, "GRAD" -25, "opsz" 48;
-  font-size: 3vw;
+  font-size: 3rem;
 }
 
 /* -------- Variables --------*/
@@ -14,48 +14,65 @@
 h1 {
   margin: 0;
   font-family: "Press Start 2P", cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
+}
+
+h1.dark {
+  color: white;
 }
 
 h2 {
   margin: 0;
   color: grey;
   font-family: "Press Start 2P", cursive;
-  font-size: 2.5rem;
+  font-size: 1.9rem;
 }
 
 h3 {
   color: grey;
   font-family: "Space Mono", monospace;
-  font-size: 2.5rem;
+  font-size: 1.9rem;
 }
 
 h4 {
   font-family: "Space Mono", monospace;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0.5vw 0;
 }
 
-.menu-screen, .menu-screen div p {
+h4.dark {
+  color: white;
+}
+
+.menu-screen a, .menu-screen div p {
   font-family: "Press Start 2P", cursive;
   font-size: 2rem;
+  color: black;
+}
+
+.menu-screen a.dark, .menu-screen div p.dark {
+  color: white;
 }
 
 p {
   font-family: "Space Mono", monospace;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+p.dark {
+  color: white;
 }
 
 a {
   text-decoration: none;
   color: rgb(143, 104, 68);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .tech_name {
   display: none;
   font-family: "Press Start 2P", cursive;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 ul {
@@ -64,14 +81,14 @@ ul {
 
 .softskill, .plusskill, .recent_ed, .recent_exp div {
   font-family: "Space Mono", monospace;
-  font-size: 1.5vw;
+  font-size: min(2.6vw, 1.2rem);
 }
 .softskill span, .softskill p, .plusskill span, .plusskill p, .recent_ed span, .recent_ed p, .recent_exp div span, .recent_exp div p {
   margin: 0 0.3vw;
   color: grey;
 }
 .softskill ul, .plusskill ul, .recent_ed ul, .recent_exp div ul {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: grey;
 }
 .softskill ul li, .plusskill ul li, .recent_ed ul li, .recent_exp div ul li {
@@ -80,24 +97,24 @@ ul {
 
 .contact_list li {
   font-family: "Space Mono", monospace;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .section_icon {
-  margin: 0 1.5vw 1.2vh 0;
+  margin: 0 1.5vw 0 0;
   position: relative;
   bottom: 10px;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .subsection-icon {
-  margin: 0 1.5vw 1.2vh 0;
-  font-size: 2.5rem;
+  margin: 0 1.5vw 0 0;
+  font-size: 1.9rem;
 }
 
 .hardskill {
   margin: 2.5% 4.5%;
-  width: 7vw;
+  width: min(7vw, 80px);
   min-width: 70px;
   max-width: 90px;
 }
@@ -106,50 +123,133 @@ ul {
   width: 30px;
 }
 
-body {
-  padding: 0 1vw;
+.button {
+  margin: 1rem 3rem;
+  padding: 0 2rem;
+  width: 350px;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 0.7rem solid black;
+  border-radius: 2.5rem;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button.dark {
+  border-color: white;
+  background-color: black;
+  color: white;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+body, html {
   overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body.dark {
+  background-color: black;
 }
 
 section {
   box-sizing: border-box;
   padding: 5vh 0;
-  margin-bottom: 5vh;
   width: 100%;
   height: 100vh;
   position: relative;
 }
 
+@keyframes marquee {
+  from {
+    -moz-transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  to {
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
 .home {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
-
-.menu-screen {
+.home .construction-label:first-child {
+  left: -15%;
+  transform: rotate(330deg);
+}
+.home .construction-label:nth-child(2) {
+  right: -15%;
+  transform: rotate(14deg);
+  top: 32%;
+}
+.home .construction-label {
+  position: absolute;
+  background-color: #FFE68D;
+  border: 7px solid black;
+  width: 120vw;
+  overflow: hidden;
+}
+.home .construction-label .bars {
+  font-weight: bold;
+}
+.home .construction-label p {
+  width: max-content;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-family: "Press Start 2P", cursive;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+.home .construction-label p span {
+  margin: 0 10px;
+}
+.home .menu-screen {
+  background-color: white;
+  margin: auto 0;
   position: relative;
-  top: 50%;
-  transform: translateY(-100%);
   align-self: center;
   width: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   border: 0.7rem solid black;
-  border-radius: 2.5vw;
+  border-radius: 2.5rem;
   box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
-.menu-screen .menu {
+.home .menu-screen .menu {
   width: 410px;
   margin: 0;
   padding: 25px 30px;
   list-style: inside square;
   box-sizing: border-box;
 }
-.menu-screen .menu li {
+.home .menu-screen .menu li {
   margin: 30px 0px;
 }
-.menu-screen .menu li::before {
+.home .menu-screen .menu li::before {
   position: absolute;
   left: 30px;
   content: "";
@@ -159,22 +259,41 @@ section {
   background-image: url("../images/24686-5-tinycursor.png");
   background-size: contain;
 }
-.menu-screen .menu li:hover {
+.home .menu-screen .menu li:hover {
   list-style-type: none;
   padding-left: 60px;
 }
-.menu-screen .menu li:hover::before {
+.home .menu-screen .menu li:hover::before {
   display: inline-block;
 }
-.menu-screen div {
+.home .menu-screen .menu.dark {
+  color: white;
+}
+.home .menu-screen .menu.dark li::before {
+  filter: invert(1);
+}
+.home .menu-screen div {
   width: 100%;
   text-align: center;
-  border-top: 7px solid black;
+  border-bottom: 7px solid black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-.menu-screen div p {
-  margin: 10px 0px;
-  font-size: 2.2rem;
-  transform: rotate(90deg);
+.home .menu-screen div p {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+.home .menu-screen div .set_dark, .home .menu-screen div .set_light {
+  padding-bottom: 6px;
+  margin-right: 16px;
+}
+.home .menu-screen div.dark {
+  border-bottom: 7px solid white;
+}
+.home .menu-screen.dark {
+  background-color: black;
+  border-color: white;
 }
 
 .my-name {
@@ -191,36 +310,62 @@ section {
   margin: 3px 0;
 }
 
-.menu-finder {
+#menu-finder {
   padding: 0;
+  position: fixed;
+  top: 2.5%;
+  right: 150px;
+}
+#menu-finder .burguer {
+  border: 0.7rem solid black;
+  border-radius: 2.5rem;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
   position: absolute;
-  top: 3%;
-  right: 3%;
-  width: 150px;
-  height: 300px;
+  display: flex;
+  justify-content: center;
+  width: 90px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#menu-finder .burguer.dark {
+  color: white;
+  border-color: white;
+  background-color: black;
+}
+#menu-finder .nav_burguer {
+  display: none;
+}
+#menu-finder .show-burguer {
+  opacity: 0.5;
 }
 
-.menu-finder:hover .nav_burguer {
-  transform: translateX(0vw);
+#menu-finder:hover .nav_burguer {
+  display: block;
 }
 
 .nav_burguer {
-  padding: 0;
   position: absolute;
-  top: 3%;
-  right: 3%;
+  padding: 0;
   width: 90px;
-  transform: translateX(30vw);
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   border: 0.7rem solid black;
-  border-radius: 2.5vw;
+  border-radius: 2.5rem;
   box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
-}
-.nav_burguer .burger_svg {
-  display: none;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 .nav_burguer ul {
   padding: 1.5vh 0;
@@ -228,11 +373,13 @@ section {
   width: 100%;
   list-style: none;
   font-family: "Press Start 2P", cursive;
-  font-size: 2.5vh;
   text-align: center;
 }
 .nav_burguer ul li {
   margin: 1vh;
+}
+.nav_burguer ul li a {
+  font-size: 2.5vh;
 }
 .nav_burguer .site_settings {
   border-bottom: 7px solid black;
@@ -240,15 +387,23 @@ section {
 .nav_burguer .site_settings .flag_icon {
   font-size: 69%;
 }
-.nav_burguer .site_settings .light-theme {
-  display: none;
+.nav_burguer .site_settings.dark {
+  border-color: white;
+  color: white;
+}
+
+.nav_burguer.dark {
+  background-color: black;
+  border-color: white;
 }
 
 .about_me {
   box-sizing: border-box;
+  padding: 5vh 2%;
+  height: auto;
   display: grid;
   grid-template-columns: max-content 1fr;
-  grid-template-rows: max-content auto auto;
+  grid-template-rows: max-content auto 1fr 2.5fr;
 }
 .about_me .section_icon {
   grid-column: 1/2;
@@ -262,20 +417,46 @@ section {
   grid-column: 2/3;
   grid-row: 2/3;
 }
-.about_me .skills-box {
+.about_me .portfolio {
   grid-column: 2/3;
   grid-row: 3/4;
+  width: 100%;
+  margin: 5vh 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.about_me .portfolio .subsection-title {
+  margin: 5vh 0;
+  display: flex;
+  align-items: center;
+}
+.about_me .portfolio .portfolio-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.about_me .skills-box {
+  margin: 5vh 0;
+  grid-column: 2/3;
+  grid-row: 4/5;
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr)) repeat(2, minmax(60px, 1fr));
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: max-content repeat(3, 1fr);
   grid-template-areas: "title title title plus plus" "hard hard hard plus plus" "hard hard hard soft soft" "hard hard hard soft soft";
 }
 .about_me .skills-box .skill-title {
   grid-area: title;
-  margin: 1vh 0;
+  margin: 5vh 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  height: fit-content;
+  align-self: end;
+}
+.about_me .skills-box .hardskills-container.dark {
+  background-color: rgb(51, 51, 51);
 }
 .about_me .skills-box .hardskills-container {
   grid-area: hard;
@@ -284,16 +465,74 @@ section {
   display: flex;
   border-radius: 3vw;
   background-color: rgb(245, 245, 245);
+  justify-content: center;
+  align-items: center;
   margin: 0;
 }
+.about_me .skills-box .hardskills-container #tech_card {
+  border: 0.7rem solid black;
+  border-radius: 2.5rem;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
+  font-family: "Space Mono", monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  padding: 16px;
+  margin: 16px;
+  z-index: 2;
+  max-width: 400px;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.2s;
+  cursor: default;
+}
+.about_me .skills-box .hardskills-container #tech_card .close {
+  position: absolute;
+  top: 5%;
+  left: 90%;
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+}
+.about_me .skills-box .hardskills-container #tech_card .tech_logo {
+  width: 40%;
+}
+.about_me .skills-box .hardskills-container #tech_card .tech_info {
+  background-color: white;
+  max-width: 90%;
+}
+.about_me .skills-box .hardskills-container #tech_card .tech_info p {
+  margin: 3px;
+  font-weight: bolder;
+}
+.about_me .skills-box .hardskills-container #tech_card .tech_info p span {
+  color: grey;
+}
+.about_me .skills-box .hardskills-container #tech_card .tech_info .tech_name {
+  margin: 10px;
+  display: block;
+  text-align: center;
+}
+.about_me .skills-box .hardskills-container #tech_card.show {
+  opacity: 1;
+  transform: translateX(0px);
+}
 .about_me .skills-box .hardskills-container .diamond-icon {
+  opacity: 50%;
   font-size: 5vh;
   position: absolute;
-  bottom: -4.5%;
-  left: -2.4%;
+  bottom: -1.5%;
+  left: -1.5%;
 }
 .about_me .skills-box .hardskills-container .hardskills-list {
-  padding: 0;
+  box-sizing: border-box;
+  padding: 1vh 0;
   margin: 0;
   position: absolute;
   width: 100%;
@@ -301,9 +540,21 @@ section {
   align-self: center;
   display: grid;
   grid-template-columns: auto auto auto auto;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
   justify-items: center;
   align-content: space-evenly;
   list-style: none;
+}
+.about_me .skills-box .hardskills-container .hardskills-list .hardskill {
+  display: flex;
+  cursor: pointer;
+}
+.about_me .skills-box .hardskills-container .hardskills-list .hardskill:hover {
+  transform: scale(1.2);
+}
+.about_me .skills-box .softskills-container.dark {
+  background-color: rgb(51, 51, 51);
 }
 .about_me .skills-box .softskills-container {
   grid-area: soft;
@@ -323,11 +574,18 @@ section {
   flex-direction: column;
   justify-content: space-evenly;
 }
+.about_me .skills-box .softskills-container .softskills-list.dark {
+  color: white;
+}
 .about_me .skills-box .softskills-container .seed-icon {
+  opacity: 50%;
   font-size: 5vh;
   position: absolute;
-  bottom: 80%;
-  left: -8.5%;
+  bottom: 87%;
+  left: -4.5%;
+}
+.about_me .skills-box .plusskills-container.dark {
+  background-color: rgb(51, 51, 51);
 }
 .about_me .skills-box .plusskills-container {
   grid-area: plus;
@@ -349,21 +607,29 @@ section {
   list-style: none;
   word-break: break-all;
 }
+.about_me .skills-box .plusskills-container .plusskills-list.dark {
+  color: white;
+}
 .about_me .skills-box .plusskills-container .check-icon {
+  opacity: 50%;
   font-size: 5vh;
   position: absolute;
-  bottom: 70%;
-  left: 90%;
+  bottom: 75%;
+  left: 88%;
 }
 
 .chronology {
+  margin: 0 0 64px 5vh;
+  margin-left: 64px;
+  margin-top: 0;
+  width: 94%;
   box-sizing: border-box;
-  padding: 1.5% 3%;
+  padding: 0 3%;
   height: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 .chronology ul {
   list-style: none;
@@ -377,26 +643,29 @@ section {
 .chronology .date {
   display: inline-block;
   margin-left: 0.5vw;
-  color: gray;
+  color: grey;
   font-weight: 400;
 }
 .chronology .ed, .chronology .exp {
-  min-width: 520px;
+  min-width: 430px;
   width: fit-content;
   max-width: 43vw;
   margin-bottom: 3vh;
 }
 .chronology .exp-title, .chronology .ed-title {
-  margin: 1vh 0;
+  margin: 5vh 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .chronology .recent_ed, .chronology .recent_exp {
   margin: 1.5vw;
   padding: 0 1vw 1vw 3vw;
   border: 7px solid rgb(255, 223, 193);
   border-radius: 2.5vw;
+}
+.chronology .old_ed.dark, .chronology .old_exp.dark {
+  background-color: rgb(51, 51, 51);
 }
 .chronology .old_ed, .chronology .old_exp {
   margin-left: 2vw;
@@ -419,7 +688,7 @@ section {
   background-color: white;
   border-radius: 18px;
   padding: 0 1vw;
-  box-shadow: 5px 5px 0px 5px grey;
+  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
 }
 .chronology .old_ed .exp_card:hover, .chronology .old_exp .exp_card:hover {
   position: relative;
@@ -429,85 +698,170 @@ section {
 }
 
 .contact {
+  width: 100%;
+  height: auto;
+  padding: 3vh 2%;
+  background-color: rgb(245, 245, 245);
   display: grid;
-  grid-template-areas: "icon title title" "icon list list" "icon portfolio portfolio" "icon button button";
-  grid-template-columns: max-content auto auto;
-  grid-template-rows: max-content max-content max-content max-content;
+  grid-template-areas: "icon title button" "icon list button";
+  grid-template-columns: max-content auto max-content;
+  grid-template-rows: max-content 1fr;
+  justify-items: start;
+  align-items: center;
 }
-.contact .section-icon {
-  grid-template-columns: icon;
+.contact .section_icon {
+  grid-area: icon;
+  align-self: flex-start;
 }
 .contact h1 {
   grid-area: title;
 }
+.contact .contact_list.dark {
+  color: white;
+}
 .contact .contact_list {
   box-sizing: border-box;
-  padding: 0 2vw;
+  padding: 2vh 0 0 0;
   width: 100%;
   grid-area: list;
-  margin-left: 2vw;
-  position: relative;
+  margin: 0;
   display: flex;
-  border-radius: 3vw;
-  background-color: rgb(245, 245, 245);
-  margin: 2vh 0;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   list-style: none;
+  min-height: 11vh;
+  justify-content: flex-start;
+  align-items: center;
 }
 .contact .contact_list a {
-  font-size: 1.5rem;
+  margin-left: 12px;
+  font-size: 1.2rem;
+}
+.contact .contact_list li:last-child {
+  display: flex;
+  align-items: center;
 }
 .contact .contact_list li {
   display: inline;
   width: max-content;
-  margin: 3vh;
+  margin: 0 1vw;
 }
 .contact .contact_list li div {
   display: inline;
 }
-.contact .portfolio {
-  width: 100%;
-  margin: 0 0 2vh 0;
-  justify-self: self-start;
-  grid-area: portfolio;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-.contact .portfolio .subsection-title {
-  margin: 1vh 0;
-  display: flex;
-  align-items: center;
-}
-.contact .button {
-  margin: 2vh 0.5vw;
-  padding: 0 2vw;
-  width: 30%;
-  min-width: max-content;
-  height: 10vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border: 0.7rem solid black;
-  border-radius: 2.5vw;
-  box-shadow: rgba(58, 58, 58, 0.4) 5px 5px, rgba(95, 95, 95, 0.3) 10px 10px, rgba(126, 126, 126, 0.2) 15px 15px, rgba(184, 184, 184, 0.1) 20px 20px, rgba(207, 207, 207, 0.05) 25px 25px;
-  font-family: "Space Mono", monospace;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.contact #download_cv {
-  width: max-content;
-  padding: 0 5vw;
-  margin: 4vh;
-  grid-area: button;
+.contact #download_cv, .contact #download_cv_eng {
+  align-self: center;
   justify-self: center;
-}
-.contact #download_cv a {
+  width: max-content;
+  padding: 0 3vw;
+  margin: 3vh 8vh;
+  grid-area: button;
   color: black;
+}
+.contact #download_cv.dark, .contact #download_cv_eng.dark {
+  color: white;
+}
+
+.contact.dark {
+  background-color: rgb(51, 51, 51);
+}
+
+@media only screen and (max-width: 992px) {
+  .section_icon {
+    display: none;
+  }
+  .button {
+    margin: 1rem 1rem;
+  }
+  .home {
+    padding-top: 0;
+  }
+  .home .construction-label:first-child {
+    left: 0;
+    transform: rotate(0deg);
+    position: relative;
+    width: 100%;
+    border-right: 0;
+    border-left: 0;
+  }
+  .home .construction-label:nth-child(2) {
+    display: none;
+  }
+  .home .menu-screen {
+    width: 350px;
+    top: 0;
+    transform: translateY(0);
+    margin: 3vw 0;
+  }
+  .home .menu-screen .menu {
+    width: 350px;
+  }
+  .home .menu-screen .menu a {
+    font-size: 128%;
+  }
+  .menu-finder {
+    top: 6.5%;
+    right: 100px;
+  }
+  .about_me {
+    padding: 5vh 0;
+  }
+  .about_me h1 {
+    padding: 0 2%;
+  }
+  .about_me .description-box {
+    width: 95%;
+    padding-left: 2%;
+  }
+  .about_me .skills-box {
+    grid-template-columns: auto;
+    grid-auto-rows: max-content;
+    grid-template-areas: "title title" "hard hard" "hard hard" "hard hard" "soft soft" "soft soft" "plus plus" "plus plus";
+    row-gap: 25px;
+  }
+  .about_me .skills-box .hardskills-container {
+    justify-self: center;
+    width: 100%;
+  }
+  .about_me .skills-box .softskills-container {
+    width: 100%;
+  }
+  .about_me .skills-box .softskills-container .softskill {
+    font-size: 1.2rem;
+  }
+  .about_me .skills-box .softskills-container .seed-icon {
+    left: 83.5%;
+    bottom: 63%;
+  }
+  .about_me .skills-box .plusskills-container {
+    width: 100%;
+    height: max-content;
+  }
+  .about_me .skills-box .plusskills-container .check-icon {
+    left: 83.5%;
+    bottom: 53%;
+  }
+  .about_me .skills-box .plusskills-container .plusskill {
+    font-size: 1.2rem;
+  }
+  .chronology {
+    margin: 0 0px 5vh 0;
+    padding: 0;
+    justify-content: flex-start;
+  }
+  .chronology .ed, .chronology .exp {
+    width: 90%;
+    max-width: none;
+    min-width: 405px;
+  }
+  .contact {
+    grid-template-columns: max-content auto max-content;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: "icon title" "icon list" "icon button";
+  }
+  .contact #download_cv, .contact #download_cv_eng {
+    margin: 3vh 0;
+  }
 }
 
 /*# sourceMappingURL=sstyle.css.map */

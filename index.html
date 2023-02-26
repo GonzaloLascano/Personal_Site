@@ -6,148 +6,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./CSTYLE/sstyle.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script defer src="script.js"></script>
     <title>Gonzalo Puñales Multimedia & Web Dev</title>
 </head>
-<body>
-    <section class="home">
-        <div class="menu-screen">
-            <ul class="menu">
-                <li class="translatable">Sobre Mi</li>
-                <li class="translatable">Contacto</li>
-                <li class="translatable">Bajar PDF</li>
+<body class="light">
+    <section class="home" id="home">
+        <div class="construction-label">
+            <p class="construction-text">
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+            </p>
+        </div>
+        <div class="construction-label">
+            <p class="construction-text">
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+                <span>///</span><span>¡CAUTION! UNDER CONSTRUCTION</span>
+            </p>
+        </div>
+        <div class="menu-screen light" data-aos="zoom-out" data-aos-delay="2000">
+            <ul class="menu light">
+                <li class="translatable">
+                    <a class="esp light" href="#about_me">Sobre Mi</a>
+                    <a class="eng light" href="#about_me">About Me</a>
+                </li>
+                <li class="translatable">
+                    <a class="esp light" href="#contact">Contacto</a>
+                    <a class="eng light" href="#contact">Contact</a>
+                </li>
+                <li class="translatable">
+                    <a class="esp light" href="https://drive.google.com/file/d/1m5YqwTxYcEdbsZCs1_CSajBiBfZ66nxD/view?usp=sharing" target="_blank">Bajar PDF</a>
+                    <a class="eng light" href="https://drive.google.com/file/d/1SZMGUw7We0JJz8xPMKBBblY6SeuRbS0B/view?usp=share_link" target="_blank">Download</a>
+                </li>
             </ul>
-            <div>
-                <p>»</p>
+            <div class="light">
+                <p class="flag_icon light esp" onclick="changeLanguage('esp', 'eng')">ENG</p>
+                <p class="flag_icon light eng" onclick="changeLanguage('eng', 'esp')">ESP</p>
+                <p class="set_light" onclick="changeTheme('light')">☀️</p>
+                <p class="set_dark"  onclick="changeTheme('dark')">🌙</p>
             </div>
         </div>
-        <div class="my-name">
-            <h1>GONZALO IVAN </h1>
-            <h1>PUÑALES LASCANO</h1>
+        <div 
+        class="my-name" data-aos="fade-right" data-aos-duration="2000">
+            <h1 class="light">GONZALO IVAN </h1>
+            <h1 class="light">PUÑALES LASCANO</h1>
             <h3>Multimedia & web dev's Online C.V.</h3>
         </div>     
     </section>
-    <section class="about_me">
+    <section class="about_me" id="about_me">
         <div class="section_icon">📖</div>
-        <h1>Sobre Mi:</h1>
-        <p class="description-box"> 
+        <h1 class="light esp">Sobre Mi:</h1>
+        <h1 class="light eng">About Me:</h1>
+        <p class="description-box esp light"> 
             Me llamo Gonzalo Ivan Puñales Lascano. 
             Nací en 1991 y actualmente vivo en Nuñez - C.A.B.A., Argentina. De formación y experiencia tanto artística como comercial. 
             Me apasiona combinar creatividad y razonamiento para afrontar diversos tipos de desafios. 
-            Me baso en el respeto mutuo, el compromiso y la empatía, para alcanzar los mejores resultados posibles y formar vínculos estrechos.
+            Me baso en el respeto mutuo, el compromiso y la empatía practica, para alcanzar, mi equipo y yo, los mejores resultados posibles y formar vínculos estrechos.
+        </p>
+        <p class="description-box eng light"> 
+            My name is Gonzalo Ivan Puñales Lascano. I was born in 1991 and I currently live at Nuñez - C.A.B.A., Argentina.
+            With both artistical and commercial formation and experience. Im passionate about putting creativity and thought To overcome several types of challenges. 
+            My main values are mutual respect, commitment and practical empathy. 
+            With them I seek to achieve the best possible results for my team and I while creating solid and clean bonds.
         </p>
         <div class="skills-box">
             <div class="skill-title">    
                 <div class="subsection-icon">💪</div>
-                <h2>Habilidades:</h2>
+                <h2 class="esp">Habilidades:</h2>
+                <h2 class="eng">Skills:</h2>
             </div>
-            <div class="plusskills-container">
-                <ul class="plusskills-list">
-                    <li class="plusskill">
+            <div class="plusskills-container light" data-aos="fade-left">
+                <ul class="plusskills-list light">
+                    <li class="plusskill esp">
                         → Idioma: <br> <span>ESP(nativo)/ENG(advanced)</span>
                     </li>
-                    <li class="plusskill">→ Disponibilidad para viajar</li>
+                    <li class="plusskill eng">
+                        → Language: <br> <span>ESP(nativo)/ENG(advanced)</span>
+                    </li>
+                    <li class="plusskill esp">→ Disponibilidad para viajar</li>
+                    <li class="plusskill eng">→ Available to relocate</li>
                 </ul>
                 <div class="check-icon">✔️</div>
             </div>
-            <div class="hardskills-container">
+            <div class="hardskills-container light" id="hardskills-container" data-aos="fade-right">
                 <ul class="hardskills-list">
                     <li class="hardskill">
-                        <img class="tech_logo"src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
-                        <p class="tech_name">HTML5</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" alt="HTML5" />
                     </li>
                     <li class="hardskill">  
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
-                        <p class="tech_name">CSS3</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" alt="CSS3"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-                        <p class="tech_name">Javascript</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Javascript"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-                        <p class="tech_name">React JS</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React JS"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
-                        <p class="tech_name">Node JS</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node JS"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" />
-                        <p class="tech_name">Express JS</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" alt="Express JS"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" />
-                        <p class="tech_name">Mongo DB</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" alt="Mongo DB"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
-                        <p class="tech_name"></p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" />
-                        <p class="tech_name">Photoshop</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" />
-                        <p class="tech_name">Illustrator</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" />
-                        <p class="tech_name">Premiere Pro</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro"/>
                     </li>
                     <li class="hardskill">
-                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" />
-                        <p class="tech_name">Blender</p>
+                        <img class="tech_logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender"/>
                     </li>
                 </ul>
                 <div class="diamond-icon">💎</div>
             </div>
-            <div class="softskills-container">
-                <ul class="softskills-list">
-                    <li class="softskill">→ comunicación</li>
-                    <li class="softskill">→ observación</li>
-                    <li class="softskill">→ empatía</li>
-                    <li class="softskill">→ adaptabilidad</li>
-                    <li class="softskill">→ pensamiento crítico</li>
+            <div class="softskills-container light" data-aos="fade-left">
+                <ul class="softskills-list esp light">
+                    <li class="softskill">→ Comunicación</li>
+                    <li class="softskill">→ Observación</li>
+                    <li class="softskill">→ Empatía Práctica</li>
+                    <li class="softskill">→ Adaptabilidad</li>
+                    <li class="softskill">→ Pensamiento crítico</li>
+                </ul>
+                <ul class="softskills-list eng light">
+                    <li class="softskill">→ Communication</li>
+                    <li class="softskill">→ Observation</li>
+                    <li class="softskill">→ Practical Empathy</li>
+                    <li class="softskill">→ Adaptability</li>
+                    <li class="softskill">→ Critical Thinking</li>
                 </ul>
                 <div class="seed-icon">🌱</div>
             </div>
+        </div>
+        <div class="portfolio">
+            <div class="subsection-title">    
+                <div class="subsection-icon">💼</div>
+                <h2>Portfolio:</h2>
+            </div>
+            <div class="portfolio-links" data-aos="zoom-in">
+                <a href="https://github.com/GonzaloLascano" target="_blank">
+                    <button class="button light">
+                        <span class="esp">Desarrollo Web</span>
+                        <span class="eng">Web Development</span> 
+                        <span class="subsection-icon">💻</span>
+                    </button>
+                </a>
+                <a href="https://admigualanimation.tumblr.com/" target="_blank">
+                    <button class="button light">
+                        <span class="esp">Arte Multimedial</span>
+                        <span class="eng">Multimedial Art</span>    
+                        <span class="subsection-icon">🎨</span>
+                    </button>
+                </a>
+            </div>
+            
         </div>
     </section>
     <section class="chronology">
         <div class="ed">
             <div class="ed-title">    
                 <div class="subsection-icon">👨‍🎓</div>
-                <h2>Educación:</h2>
+                <h2 class="esp">Educación:</h2>
+                <h2 class="eng">Education:</h2>
             </div>
-            <div class="recent_ed">
-                <h4>→ Desarrollo Full Stack</h4>
+            <div class="recent_ed"  data-aos="flip-left">
+                <h4 class="esp light">→ Desarrollo Full Stack</h4>
+                <h4 class="eng light">→ Full Stack Development</h4>
                 <p>@ CoderHouse<span class="date">|04/'21 - 11/'22</span></p>
                 <ul>
-                    <li>→ Desarrollo Web</li>
+                    <li class="esp">→ Desarrollo Web</li>
+                    <li class="eng">→ Web Development</li>
                     <li>→ Javascript</li>
                     <li>→ React JS</li>
-                    <li>→ Backend</li>
+                    <li>→ Back End</li>
                 </ul>
             </div>
-            <ul class="old_exp">
+            <ul class="old_exp light"  data-aos="flip-left">
                 <li class="exp_card">
-                    <h4>→ Cine de Animación</h4>
+                    <h4 class="esp light">→ Cine de Animación</h4>
+                    <h4 class="eng light">→ Animated feature film</h4>
                     <div class="exp_details">
-                        <h4>Cine de Animación</h4>
+                        <h4 class="esp">→ Cine de Animación</h4>
+                        <h4 class="eng">→ Animated feature film</h4>
                         <p>@ Escuela Da Vinci de Arte Multimedial<span class="date">| 03/'09 - 11/'11</span></p>
                     </div>
                 </li>
                 <li class="exp_card">
-                    <h4>→ Social Media Management</h4>
+                    <h4 class="light">→ Social Media Management</h4>
                     <div class="exp_details">
                         <h4>Social Media Management</h4>
                         <p>@ Universidad Tecnologica Nacional<span class="date">| '18</span></p>
                     </div>
                 </li>
                 <li class="exp_card">
-                    <h4>→ Negotiation & Troubleshooting Techniques</h4>
-                    <div class="exp_details">
+                    <h4 class="light">→ Negotiation & Troubleshooting Techniques</h4>
+                    <div class="exp_details" data-aos="fade-right">
                         <h4>Negotiation & Troubleshooting Techniques</h4>
                         <p>@ I.C.B.C.<span class="date">| '18</span></p>
                     </div>
@@ -157,25 +227,34 @@
         <div class="exp">
             <div class="exp-title">    
                 <div class="subsection-icon">👨‍💻</div>
-                <h2>Experiencia:</h2>
+                <h2 class="esp">Experiencia:</h2>
+                <h2 class="eng">Experience:</h2>
             </div>
-            <ul class="recent_exp">
+            <ul class="recent_exp" data-aos="flip-left" data-aos-delay="300">
                 <div>
-                    <h4>→ Overcome The Barrier LLC <span class="date">| 08/'21</span></h4>
-                    <p>"Tutor de español para personas angloparlantes" </p>
+                    <h4 class="light">→ Overcome The Barrier LLC <span class="date">| 08/'21</span></h4>
+                    <p class="esp">"Tutor de español para personas angloparlantes"</p>
+                    <p class="eng">"Spanish tutor for english speaking students"</p>
                     <p class="exp_ref"><a href="http://octb.us">🔗 octb.us</a></p>
                 </div>
                 <div>
-                    <h4>→ Independiente <span class="date">| 11/'19</span></h4>
+                    <h4 class="esp light">→ Independiente <span class="date">| 11/'19</span></h4>
+                    <h4 class="eng light">→ Freelance <span class="date">| 11/'19</span></h4>
                     <ul>
                         <li>
-                            <p class="exp_ref"><a href="https://www.youtube.com/@lucasnicolasacosta125">🔗Rap Real: album cover CGI artwork(Youtube)</a></p>
+                            <p class="exp_ref"><a href="https://www.youtube.com/@lucasnicolasacosta125">🔗 Rap Real: album cover CGI artwork(Youtube)</a></p>
                         </li>
                         <li>
-                            <p class="exp_ref"><a href="https://www.instagram.com/admigual/">🔗 Admigual: arte y props 3d (Instagram)</a></p>
+                            <p class="exp_ref">
+                                <a class="esp" href="https://www.instagram.com/admigual/">🔗 Admigual: arte y props 3d (Instagram)</a>
+                                <a class="eng" href="https://www.instagram.com/admigual/">🔗 Admigual: 3d props & art (Instagram)</a>
+                            </p>
                         </li>
                         <li>
-                            <p class="exp_ref"><a href="https://www.instagram.com/velureca/">🔗 Visuals para redes sociales(Instagram)</a></p>
+                            <p class="exp_ref">
+                                <a class="esp" href="https://www.instagram.com/velureca/">🔗 Visuals para redes sociales(Instagram)</a>
+                                <a class="eng" href="https://www.instagram.com/velureca/">🔗 Visuals for social media</a>
+                            </p>
                         </li>
                         <li>
                             <p class="exp_ref"><a href="https://www.youtube.com/channel/UC3zk-PiEVXVclMnhr4wmXLg">🔗 Video Editing at OCTB (Youtube)</a></p>
@@ -183,72 +262,81 @@
                     </ul>
                 </div>
             </ul>
-            <ul class="old_exp">
+            <ul class="old_exp light" data-aos="flip-left" data-aos-delay="300">
                 <li class="exp_card">
-                    <h4>→ Conde S.A.</h4>
+                    <h4 class="light">→ Conde S.A.</h4>
                     <div class="exp_details">
                         <h4> Conde S.A.</h4>
-                        <p>"Administrativo" <span class="date">| 12/'16 - 11/'19</span></p>
+                        <p class="esp">"Administrativo" <span class="date">| 12/'16 - 11/'19</span></p>
+                        <p class="eng">"Help Desk" <span class="date">| 12/'16 - 11/'19</span></p>
                     </div>
                 </li>
                 <li class="exp_card">
-                    <h4>→ Industrial And Commercial Bank of China</h4>
+                    <h4 class="light">→ Industrial And Commercial Bank of China</h4>
                     <div class="exp_details">
                         <h4> Industrial And Commercial Bank of China</h4>
-                        <p>"Oficial de Ventas Retail" <span class="date">| 10/'15 - 12/'16</span></p> 
+                        <p class="esp">"Oficial de Ventas Retail" <span class="date">| 10/'15 - 12/'16</span></p>
+                        <p class="eng">"Retail Sales Officer" <span class="date">| 10/'15 - 12/'16</span></p> 
                     </div>
                 </li>
                 <li class="exp_card">
-                    <h4>→ Indicom S.A.</h4>
+                    <h4 class="light">→ Indicom S.A.</h4>
                     <div class="exp_details">
                         <h4> Indicom S.A.</h4>
-                        <p>"Soporte tecnico para la firma 'Telecentro'" <span class="date">| 8/'14 - 10/'15</span></p>
+                        <p class="esp">"Soporte tecnico para la firma 'Telecentro'" <span class="date">| 8/'14 - 10/'15</span></p>
+                        <p class="eng">"Tech brand support for 'Telecentro'" <span class="date">| 8/'14 - 10/'15</span></p>
                     </div>
                 </li>
             </ul>
         </div>
     </section>
-    <section class="contact">   
+    <section class="contact light" id="contact">   
         <div class="section_icon">👤</div>
-        <h1>Contacto:</h1>
-        <div class="portfolio">
-            <div class="subsection-title">    
-                <div class="subsection-icon">💼</div>
-                <h2>Portfolio:</h2>
-            </div>
-            <button class="button">Web Development <span class="subsection-icon">💻</span></button>
-            <button class="button">Multimedial Art <span class="subsection-icon">🎨</span></button>
-        </div>
-        <ul class="contact_list">
+        <h1 class="esp light">Contacto:</h1>
+        <h1 class="eng light">Contact:</h1>
+        <ul class="contact_list light">
             <li><div class="phone_icon">📞</div> (+54) 9 11 2404-9941</li>
-            <li><div class="mail_icon">📧</div> lascano.gonzalo.ivan@gmail.com</li>
             <li><div class="house_icon">📍</div> Nuñez - C.A.B.A. - Argentina</li>
+            <li><div class="mail_icon">📧</div> lascano.gonzalo.ivan@gmail.com</li>
             <li>
                 <img class="in_icon"src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"/>
-                <a href="https://linkedin.com/in/admigual">Linked-in</a>
+                <a href="https://linkedin.com/in/admigual"> Linked-in</a>
             </li>
         </ul>
-        <a href=""></a><button type="button" class="button" id="download_cv">DESCARGA ESTE C.V.</button></a>
+        <a href="https://drive.google.com/file/d/1m5YqwTxYcEdbsZCs1_CSajBiBfZ66nxD/view?usp=sharing" target="_blank" class="light esp" id="download_cv">
+            <button type="button" class="button light" data-aos="flip-down">DESCARGA ESTE C.V.</button>
+        </a>
+        <a href="https://drive.google.com/file/d/1SZMGUw7We0JJz8xPMKBBblY6SeuRbS0B/view?usp=share_link" target="_blank" class="light eng" id="download_cv_eng">
+            <button type="button" class="button light" data-aos="flip-down">DOWNLOAD C.V.</button>
+        </a>
     </section>
-    <div class="menu-finder">
-        <div class="nav_burguer">
+    <div id="menu-finder">
+        <div class="burguer light" id="burguer-button">
             <span class="material-symbols-outlined burger_svg">
                 menu
-                </span>
-            <ul class="site_settings">
-                <li class="flag_icon">ESP</li>
+            </span>
+        </div>
+        <div class="nav_burguer light">
+            <ul class="site_settings light">
+                <li class="flag_icon esp light" onclick="changeLanguage('esp', 'eng')">ENG</li>
+                <li class="flag_icon eng light" onclick="changeLanguage('eng', 'esp')">ESP</li>
                 <li class="theme_icon">
-                    <span class="light-theme">☀️</span>
-                    <span class="dark-theme">🌙</span>
+                    <span class="set_light" onclick="changeTheme('light')">☀️</span>
+                    <span class="set_dark" onclick="changeTheme('dark')">🌙</span>
                 </li>
             </ul>
             <ul class="site_sections">
-                <li class="info_icon">📖</li>
-                <li class="contact_icon">👤</li>
-                <li class="download_icon">💾</li>
+                <li class="info_icon"><a href="#home">🏠</a></li>
+                <li class="download_icon">
+                    <a class="esp" href="https://drive.google.com/file/d/1m5YqwTxYcEdbsZCs1_CSajBiBfZ66nxD/view?usp=sharing">💾</a>
+                    <a class="eng" href="https://drive.google.com/file/d/1SZMGUw7We0JJz8xPMKBBblY6SeuRbS0B/view?usp=share_link">💾</a>
+                </li>
             </ul>
         </div>
     </div>
-    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

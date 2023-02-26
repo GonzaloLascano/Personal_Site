@@ -13,7 +13,7 @@ const html5 = new Hardskill('HTML5', 2, ['None']);
 const css3 = new Hardskill('CSS3', 2, ['Bootstrap','Sass']);
 const js = new Hardskill ('Javascript', 2, ['JQuery']);
 const react = new Hardskill ('React JS', 1, ['None']);
-const node = new Hardskill ('Node JS', 1, ['Passport', 'Dotenv', 'Log4js', 'Mocha', '+...']);
+const node = new Hardskill ('Node JS', 1, ['Passport', 'Dotenv', 'Log4js', 'Mocha', 'Postman', '+...']);
 const express = new Hardskill ('Express JS', 1, ['Handlebars']); //add special names
 const mongo = new Hardskill ('Mongo DB', 1, ['Mongoose']);
 const git = new Hardskill ('Git', 2, ['GitHub']);
@@ -160,6 +160,11 @@ const techCardRenderer = e => {
             </p>    
         </div>
     `;
+
+    if (mentionContent == 'None') {
+        card.lastElementChild.removeChild(card.lastElementChild.lastElementChild);
+    }
+    
     setTimeout(() => {
         console.log('wait')  
         card.classList.add('show')

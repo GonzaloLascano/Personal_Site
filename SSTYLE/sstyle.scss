@@ -334,6 +334,9 @@ section {
         }
         .menu.dark {
             color: $lightestTone;
+            li::before {
+                filter: invert(1);
+            }
         }
         div {
             width: 100%;

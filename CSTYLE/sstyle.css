@@ -269,6 +269,9 @@ section {
 .home .menu-screen .menu.dark {
   color: white;
 }
+.home .menu-screen .menu.dark li::before {
+  filter: invert(1);
+}
 .home .menu-screen div {
   width: 100%;
   text-align: center;
